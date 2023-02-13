@@ -1,0 +1,9 @@
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/SFMLfirst.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/edit_cache.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/rebuild_cache.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/list_install_components.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/install.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/install/local.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/install/strip.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/SFMLfirst_autogen_timestamp_deps.dir
+E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug/CMakeFiles/SFMLfirst_autogen.dir

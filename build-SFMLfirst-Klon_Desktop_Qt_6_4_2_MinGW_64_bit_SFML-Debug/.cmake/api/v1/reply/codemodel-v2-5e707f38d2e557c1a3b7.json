@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-fcce8b17fcf4af365da4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SFMLfirst",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SFMLfirst::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SFMLfirst-Debug-213bddfde904ff51608a.json",
+					"name" : "SFMLfirst",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SFMLfirst_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SFMLfirst_autogen-Debug-e2bbfaeb0e9c91ee7be7.json",
+					"name" : "SFMLfirst_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SFMLfirst_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SFMLfirst_autogen_timestamp_deps-Debug-6cba16b0dab5fc1f4d26.json",
+					"name" : "SFMLfirst_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/POLIBUDA/QTprojekty/build-SFMLfirst-Klon_Desktop_Qt_6_4_2_MinGW_64_bit_SFML-Debug",
+		"source" : "E:/POLIBUDA/QTprojekty/SFMLfirst"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
