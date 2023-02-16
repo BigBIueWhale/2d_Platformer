@@ -5,36 +5,14 @@
 int main()
 {
 
-    //################################## TEXTURES ################################################
-    sf::Texture play;
-    if (!play.loadFromFile("textures\\play.png")) {
-        std::cout << "Could not load texture play.png" << std::endl;
-        return 1;
-    }
-    sf::Texture bestscores;
-    if (!bestscores.loadFromFile("textures\\bestscores.png")) {
-        std::cout << "Could not load texture bestscores.png" << std::endl;
-        return 1;
-    }
-    sf::Texture settings;
-    if (!settings.loadFromFile("textures\\settings.png")) {
-        std::cout << "Could not load texture settings.png" << std::endl;
-        return 1;
-    }
-    sf::Texture exit;
-    if (!exit.loadFromFile("textures\\exit.png")) {
-        std::cout << "Could not load texture exit.png" << std::endl;
-        return 1;
-    }
-
-    //###############################################################################################
-
     //################################### OBJECTS INICJALIZATION #########################################
     sf::Event event;
+
     sf::RenderWindow _window;
     _window.create(sf::VideoMode(1280,720), "test", sf::Style::None);
+    _window.setVerticalSyncEnabled(true); // synchronization with frequency of the monitor
 
-    MainMenu mainmenu(play, bestscores, settings, exit, _window);
+    MainMenu mainmenu(_window);
 
     //#########################################################################################################
 
@@ -46,14 +24,19 @@ int main()
             if(event.key.code == sf::Keyboard::Space)
                 _window.close();
 
-
-            mainmenu.eventHandling(event,_window);
+            mainmenu.eventHandling(_window);
         }
-        //############################################################################
+        //###############################################################################
 
 
+        //############################ DRAW WINDOW ######################################
+        _window.clear();
 
         mainmenu.drawMenu(_window);
+
+
+      //######################################################
+        sf::sleep(sf::microseconds(16667)); // 60fps
     }
 
 

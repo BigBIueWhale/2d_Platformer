@@ -3,14 +3,18 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include<SFML/Audio.hpp>
+#include <iostream>
+#include<windows.h>
 
 class MainMenu : public sf::Sprite {
 private:
+    //########## INITIALIZATION OF TEXTURES AND MUSIC #########
     sf::Sprite play_sprite_;
     sf::Texture play_texture_;
 
-    sf::Sprite bestscores_sprite_;
-    sf::Texture bestscores_texture_;
+    sf::Sprite bestscore_sprite_;
+    sf::Texture bestscore_texture_;
 
     sf::Sprite settings_sprite_;
     sf::Texture settings_texture_;
@@ -18,13 +22,25 @@ private:
     sf::Sprite exit_sprite_;
     sf::Texture exit_texture_;
 
-    void scaleButtonWhenContainsMouse(sf::RenderWindow &window);
+    sf::Music changeoption_sound;
+    sf::Music chooseoption_sound;
+
+    //###### VARIABLES ######
+    bool draw_mainmenu = 1; // 1 - draw mainmenu, 0 - don't
+
+    std::string tmp1 = "";
+        bool soundPlayed = false;
+
+
+    //########## FUNCTIONS #########
+    void dynamicMenu(sf::RenderWindow &window);
+    void playSoundOnChange(std::string &detection);
 
 public:
-    MainMenu(sf::Texture &play_texture, sf::Texture &bestscores_texture, sf::Texture &settings_texture, sf::Texture &exit_texture, sf::RenderWindow &window);
+    MainMenu(sf::RenderWindow &window);
     void drawMenu(sf::RenderWindow &window);
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
-    void eventHandling(sf::Event &event, sf::RenderWindow &window);
+    std::string eventHandling(sf::RenderWindow &window);
 
 };
 
