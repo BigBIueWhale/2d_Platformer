@@ -1,7 +1,7 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
 #include "MainMenu.h"
-
+#include "Levels.h"
 int main()
 {
 
@@ -14,6 +14,8 @@ int main()
 
     MainMenu mainmenu(_window);
 
+    Levels levels;
+
     //#########################################################################################################
 
     while(_window.isOpen()){
@@ -23,16 +25,24 @@ int main()
         while(_window.pollEvent(event)){
             if(event.key.code == sf::Keyboard::Space)
                 _window.close();
-
-            mainmenu.eventHandling(_window);
+            if(mainmenu.what_button_clicked == "")
+            mainmenu.what_button_clicked = mainmenu.eventHandling(_window);
         }
         //###############################################################################
 
 
         //############################ DRAW WINDOW ######################################
         _window.clear();
+        if(mainmenu.what_button_clicked == "")
+        {
+          mainmenu.drawMenu(_window);
+        }
+      else if(mainmenu.what_button_clicked == "play_clicked")
+        {
+            levels.drawLevels(_window);
+        }
 
-        mainmenu.drawMenu(_window);
+
 
 
       //######################################################

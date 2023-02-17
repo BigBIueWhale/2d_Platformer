@@ -50,16 +50,15 @@ MainMenu::MainMenu(sf::RenderWindow &window)
 void MainMenu::drawMenu(sf::RenderWindow &window)
 {
     // IN: Rendered window;
-    // RESULT: Draw graphic content on the provided window;
-    if(draw_mainmenu)
-    {
+    // RESULT: Draw graphic content on the provided window and execution of dynaminMenu() function;
+
         dynamicMenu(window);
 
         window.draw(play_sprite_);
         window.draw(bestscore_sprite_);
         window.draw(settings_sprite_);
         window.draw(exit_sprite_);
-    }
+
 }
 
 //#########################################################################################################################################
@@ -100,9 +99,14 @@ std::string MainMenu::detectButtonContainsMouse(sf::RenderWindow &window)
        }
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 void MainMenu::playSoundOnChange(std::string &detection)
 {
 
+    //IN: detected name of object that contains mouse
+    //RESULT: play sound once when cursor contains button
     if (detection != tmp1)
     {
         tmp1 = "";
@@ -157,7 +161,7 @@ std::string MainMenu::eventHandling(sf::RenderWindow &window)
 {
     //IN: event, window;
     //RESULT: Event handling regarding menu (clicking buttons: play, score board, settings, exit);
-    // after choosing option draw_mainmenu=0 stops main menu from drawing
+    //RETURN: "play_clicked", "bestscore_clicked", "settings_clicked"
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
            std::string name_of_clicked_button = detectButtonContainsMouse(window);
@@ -166,31 +170,30 @@ std::string MainMenu::eventHandling(sf::RenderWindow &window)
                 //EVENT FOR PLAY
                 chooseoption_sound.play();
                 Sleep(240);
-                draw_mainmenu = 0;
                 return "play_clicked";
            }
            else if(name_of_clicked_button == "bestscores"){
                //EVENT FOR BESTSCORES
                chooseoption_sound.play();
-               Sleep(150);
-               draw_mainmenu = 0;
-               return "bestscores_clicked";
+               Sleep(240);
+               return "bestscore_clicked";
            }
            else if(name_of_clicked_button == "settings"){
                //EVENT FOR SETTINGS
                chooseoption_sound.play();
-               Sleep(150);
-               draw_mainmenu = 0;
+               Sleep(240);
                return "settings_clicked";
 
            }
            else if(name_of_clicked_button == "exit"){
                //EVENT FOR EXIT
-               Sleep(230);
+               chooseoption_sound.play();
+               Sleep(900);
                window.close();
           }
+
     }
-        return "";
+    return "";
 }
 
 

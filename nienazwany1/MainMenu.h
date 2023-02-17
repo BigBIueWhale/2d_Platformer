@@ -3,13 +3,13 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include<SFML/Audio.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
-#include<windows.h>
+#include <windows.h>
 
 class MainMenu : public sf::Sprite {
 private:
-    //########## INITIALIZATION OF TEXTURES AND MUSIC #########
+    //#### INITIALIZATION OF TEXTURES AND MUSIC #####
     sf::Sprite play_sprite_;
     sf::Texture play_texture_;
 
@@ -25,18 +25,21 @@ private:
     sf::Music changeoption_sound;
     sf::Music chooseoption_sound;
 
-    //###### VARIABLES ######
-    bool draw_mainmenu = 1; // 1 - draw mainmenu, 0 - don't
 
     std::string tmp1 = "";
         bool soundPlayed = false;
 
 
-    //########## FUNCTIONS #########
+    //#### FUNCTIONS ####
     void dynamicMenu(sf::RenderWindow &window);
     void playSoundOnChange(std::string &detection);
 
 public:
+    //#### VARIABLES ####
+    std::string what_button_clicked;
+
+    //#### FUNCTIONS ####
+    MainMenu();
     MainMenu(sf::RenderWindow &window);
     void drawMenu(sf::RenderWindow &window);
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
