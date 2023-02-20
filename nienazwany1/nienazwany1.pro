@@ -30,6 +30,7 @@ DEPENDPATH += "E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\include" #change this
 SOURCES += \
         Levels.cpp \
         MainMenu.cpp \
+        WindowHandler.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -39,4 +40,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Levels.h \
-    MainMenu.h
+    MainMenu.h \
+    WindowHandler.h

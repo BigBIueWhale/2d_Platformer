@@ -39,15 +39,12 @@ MainMenu::MainMenu(sf::RenderWindow &window)
     //exit_sprite_.setScale(1.1, 1.1);
 
 
-    // MUSIC INITIALIZATION
-    changeoption_sound.openFromFile("music\\plum.wav");
-    chooseoption_sound.openFromFile("music\\choose.wav");
 
 }
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-void MainMenu::drawMenu(sf::RenderWindow &window)
+void MainMenu::drawWindow(sf::RenderWindow &window)
 {
     // IN: Rendered window;
     // RESULT: Draw graphic content on the provided window and execution of dynaminMenu() function;
@@ -159,7 +156,7 @@ playSoundOnChange(button);
 
 std::string MainMenu::eventHandling(sf::RenderWindow &window)
 {
-    //IN: event, window;
+    //IN:  window;
     //RESULT: Event handling regarding menu (clicking buttons: play, score board, settings, exit);
     //RETURN: "play_clicked", "bestscore_clicked", "settings_clicked"
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -169,7 +166,6 @@ std::string MainMenu::eventHandling(sf::RenderWindow &window)
            if(name_of_clicked_button == "play"){
                 //EVENT FOR PLAY
                 chooseoption_sound.play();
-                Sleep(240);
                 return "play_clicked";
            }
            else if(name_of_clicked_button == "bestscores"){

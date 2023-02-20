@@ -7,9 +7,11 @@
 #include <iostream>
 #include <windows.h>
 
-class MainMenu : public sf::Sprite {
+#include<WindowHandler.h>
+
+class MainMenu : public WindowHandler {
 private:
-    //#### INITIALIZATION OF TEXTURES AND MUSIC #####
+    //#### INITIALIZATION OF TEXTURES #####
     sf::Sprite play_sprite_;
     sf::Texture play_texture_;
 
@@ -22,12 +24,9 @@ private:
     sf::Sprite exit_sprite_;
     sf::Texture exit_texture_;
 
-    sf::Music changeoption_sound;
-    sf::Music chooseoption_sound;
-
 
     std::string tmp1 = "";
-        bool soundPlayed = false;
+    bool soundPlayed = false;
 
 
     //#### FUNCTIONS ####
@@ -36,14 +35,14 @@ private:
 
 public:
     //#### VARIABLES ####
-    std::string what_button_clicked;
+    //std::string what_button_clicked="haha";
 
     //#### FUNCTIONS ####
-    MainMenu();
     MainMenu(sf::RenderWindow &window);
-    void drawMenu(sf::RenderWindow &window);
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
-    std::string eventHandling(sf::RenderWindow &window);
+
+    virtual void drawWindow(sf::RenderWindow &window);
+    virtual std::string eventHandling(sf::RenderWindow &window);
 
 };
 
