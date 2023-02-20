@@ -394,7 +394,24 @@ debug/WindowHandler.o: ../nienazwany1/WindowHandler.cpp ../nienazwany1/WindowHan
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Music.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\WindowHandler.o ..\nienazwany1\WindowHandler.cpp
 
 debug/main.o: ../nienazwany1/main.cpp ../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \

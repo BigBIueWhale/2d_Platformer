@@ -25,11 +25,16 @@ private:
     sf::Sprite level_sprite_; // lvl square sprite
     sf::Texture level_texture_;// lvl square texture
 
-    sf::Sprite back_sprite_; // back to main menu sprite
-    sf::Texture back_texture_; // back to main menu texture
+    sf::Sprite levels_sprite_; // "Levels"
+    sf::Texture levels_texture_;// "Levels"
 
-    sf::Sprite go_sprite_; // go to the game sprite
-    sf::Texture go_texture_; //  go to the game texture
+
+
+    sf::Sprite back_sprite_; // "Back"
+    sf::Texture back_texture_; // "Back"
+
+    sf::Sprite go_sprite_; // "Go"
+    sf::Texture go_texture_; // "Go"
 
     sf::Text text_;
     sf::Font font_;
@@ -40,13 +45,15 @@ private:
     std::vector<sf::Sprite> levels_vector; //2d vector used to draw table of evailable levels
     std::vector<sf::Text> numbers_vector;
 
-    void setLevelsVector(sf::RenderWindow &window);
+    void setTextAndSprites(sf::RenderWindow &window);
+    void dynamicMenu(sf::RenderWindow &window) override;
 
 public:
     Levels(sf::RenderWindow &window);
+    std::string detectButtonContainsMouse(sf::RenderWindow &window);
 
-    virtual void drawWindow(sf::RenderWindow &window); // draw levels
-    virtual std::string eventHandling(sf::RenderWindow &window){;};
+    virtual void drawWindow(sf::RenderWindow &window) override; // draw levels
+    virtual std::string eventHandling(sf::RenderWindow &window) override;
 
 
 };

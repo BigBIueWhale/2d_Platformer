@@ -8,18 +8,25 @@
 
 class WindowHandler : public sf::Sprite
 {
+private:
+    std::string tmp1 = "";
+    bool soundPlayed = false;
+
 protected:
     sf::Music changeoption_sound;
     sf::Music chooseoption_sound;
 
+    virtual void dynamicMenu(sf::RenderWindow &window)=0;
+    void playSoundOnChange(std::string &detection);
 public:
-    std::string what_button_clicked = "";
     WindowHandler();
 
+    std::string what_button_clicked = "";
     void rememberClickedButton(std::string button_name);
 
     virtual void drawWindow(sf::RenderWindow &window)=0;
     virtual std::string eventHandling(sf::RenderWindow &window)=0;
+
     virtual ~WindowHandler(){}
 };
 

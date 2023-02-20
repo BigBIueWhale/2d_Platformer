@@ -11,7 +11,7 @@ int main()
     sf::Event event;
 
     sf::RenderWindow _window;
-    _window.create(sf::VideoMode(1280,720), "test", sf::Style::None);
+    _window.create(sf::VideoMode(1280,720), "Bloody game", sf::Style::None);
     _window.setVerticalSyncEnabled(true); // synchronization with frequency of the monitor
 
 
@@ -49,9 +49,15 @@ int main()
 
        if(windowhandler->what_button_clicked == "play_clicked")
        {
-            Sleep(405); // let sound ring
+            Sleep(172);
             delete windowhandler;
             windowhandler = new Levels(_window);
+       }
+       else if(windowhandler->what_button_clicked == "back_clicked")
+       {
+           Sleep(172);
+           delete windowhandler;
+           windowhandler = new MainMenu(_window);
        }
 
 

@@ -25,24 +25,16 @@ private:
     sf::Texture exit_texture_;
 
 
-    std::string tmp1 = "";
-    bool soundPlayed = false;
-
 
     //#### FUNCTIONS ####
-    void dynamicMenu(sf::RenderWindow &window);
-    void playSoundOnChange(std::string &detection);
-
+    virtual void dynamicMenu(sf::RenderWindow &window) override;
 public:
-    //#### VARIABLES ####
-    //std::string what_button_clicked="haha";
-
     //#### FUNCTIONS ####
     MainMenu(sf::RenderWindow &window);
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
 
-    virtual void drawWindow(sf::RenderWindow &window);
-    virtual std::string eventHandling(sf::RenderWindow &window);
+    virtual void drawWindow(sf::RenderWindow &window) override;
+    virtual std::string eventHandling(sf::RenderWindow &window) override;
 
 };
 

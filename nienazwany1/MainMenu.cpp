@@ -99,31 +99,6 @@ std::string MainMenu::detectButtonContainsMouse(sf::RenderWindow &window)
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-void MainMenu::playSoundOnChange(std::string &detection)
-{
-
-    //IN: detected name of object that contains mouse
-    //RESULT: play sound once when cursor contains button
-    if (detection != tmp1)
-    {
-        tmp1 = "";
-        soundPlayed = false;
-        changeoption_sound.stop();
-    }
-    if (detection != "" && tmp1 != detection)
-    {
-        if (!soundPlayed)
-        {
-            changeoption_sound.play();
-            soundPlayed = true;
-        }
-        tmp1 = detection;
-    }
-}
-
-
-//#########################################################################################################################################
-//#########################################################################################################################################
 
 void MainMenu::dynamicMenu(sf::RenderWindow &window)
 {
