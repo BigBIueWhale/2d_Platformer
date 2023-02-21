@@ -239,8 +239,9 @@ std::string Levels::detectButtonContainsMouse(sf::RenderWindow &window)
 std::string Levels::eventHandling(sf::RenderWindow &window)
 {
     //IN:  window;
-    //RESULT: Event handling regarding menu (clicking buttons: back, go, level choosing);
-    //RETURN: "back_clicked", "go_clicked", "level_clicked"
+    //RESULT: Event handling regarding levels choice (clicking buttons: back, go, level choosing);
+    //        when level
+    //RETURN: "back", "go", ""
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
            std::string name_of_clicked_button = detectButtonContainsMouse(window);

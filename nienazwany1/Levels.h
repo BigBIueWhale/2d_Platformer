@@ -21,9 +21,13 @@ class Levels : public WindowHandler {
 private:
     float number_of_levels = 0; // number of levels available counted by countLevels(function)
     int chosen_level; //lvl selected by the player by clicking on it
+    int what_level_chosen = -1;
 
     sf::Sprite level_sprite_; // lvl square sprite
     sf::Texture level_texture_;// lvl square texture
+
+    sf::Sprite level_green_sprite_; // lvl square sprite
+    sf::Texture level_green_texture_;// lvl square texture
 
     sf::Sprite levels_sprite_; // "Levels"
     sf::Texture levels_texture_;// "Levels"

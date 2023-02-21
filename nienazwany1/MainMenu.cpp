@@ -8,7 +8,7 @@
 MainMenu::MainMenu(sf::RenderWindow &window)
 {
     // IN: Rendered window;
-    // RESULT:  Displaying graphic content of buttons "Play", "Bestscore", "Settings" and "Exit", setting positions; Music initialization
+    // RESULT:  Initialization of graphic content of buttons "Play", "Bestscore", "Settings" and "Exit", setting positions; Music initialization
 
     // PLAY BUTTON
     play_texture_.loadFromFile("textures\\play.png");
@@ -47,7 +47,7 @@ MainMenu::MainMenu(sf::RenderWindow &window)
 void MainMenu::drawWindow(sf::RenderWindow &window)
 {
     // IN: Rendered window;
-    // RESULT: Draw graphic content on the provided window and execution of dynaminMenu() function;
+    // RESULT: Draw graphic content in the provided window and initialization of dynaminMenu() function;
 
         dynamicMenu(window);
 
