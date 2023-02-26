@@ -12,10 +12,12 @@ private:
     std::string tmp1 = "";
     bool soundPlayed = false;
 
+
+
 protected:
+    int chosen_level = 1;
     sf::Music changeoption_sound;
     sf::Music chooseoption_sound;
-
     virtual void dynamicMenu(sf::RenderWindow &window)=0;
     void playSoundOnChange(std::string &detection);
 public:

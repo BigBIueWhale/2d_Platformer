@@ -1,5 +1,6 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
+#include "Game.h"
 #include "MainMenu.h"
 #include "Levels.h"
 
@@ -11,7 +12,7 @@ int main()
     sf::Event event;
 
     sf::RenderWindow _window;
-    _window.create(sf::VideoMode(1280,720), "Bloody game", sf::Style::None);
+    _window.create(sf::VideoMode(1500,900), "Bloody game", sf::Style::None);
     _window.setVerticalSyncEnabled(true); // synchronization with frequency of the monitor
 
 
@@ -58,6 +59,14 @@ int main()
            Sleep(172);
            delete windowhandler;
            windowhandler = new MainMenu(_window);
+       }
+       else if(windowhandler->what_button_clicked == "go_clicked")
+       {
+           Sleep(172);
+           delete windowhandler;
+           windowhandler = new Game();
+           //START THE GAME
+
        }
 
 

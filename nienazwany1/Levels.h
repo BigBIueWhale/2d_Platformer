@@ -13,14 +13,14 @@
 #include<SFML/Audio.hpp>
 
 
+
 #include <vector>
 #include <WindowHandler.h>
 
 class Levels : public WindowHandler {
 
 private:
-    float number_of_levels = 0; // number of levels available counted by countLevels(function)
-    int chosen_level; //lvl selected by the player by clicking on it
+    float number_of_levels = 0; // number of levels available counted by countLevels(function) //lvl selected by the player by clicking on it
     int what_level_chosen = -1;
 
     sf::Sprite level_sprite_; // lvl square sprite
@@ -50,9 +50,10 @@ private:
     std::vector<sf::Text> numbers_vector;
 
     void setTextAndSprites(sf::RenderWindow &window);
-    void dynamicMenu(sf::RenderWindow &window) override;
+    virtual void dynamicMenu(sf::RenderWindow &window) override;
 
 public:
+
     Levels(sf::RenderWindow &window);
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
 

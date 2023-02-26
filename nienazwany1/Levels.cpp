@@ -201,6 +201,9 @@ void Levels::countLevels()
 
 std::string Levels::detectButtonContainsMouse(sf::RenderWindow &window)
 {
+    //IN: Rendered window;
+    //RESULT: Returns the information within whitch texture mouse is at the moment.
+    //RETURN: "go", "back" or number of level (i);
    const sf::Vector2f mouse_pos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
    const sf::FloatRect go_bounds = go_sprite_.getGlobalBounds();
@@ -239,8 +242,9 @@ std::string Levels::detectButtonContainsMouse(sf::RenderWindow &window)
 std::string Levels::eventHandling(sf::RenderWindow &window)
 {
     //IN:  window;
-    //RESULT: Event handling regarding menu (clicking buttons: back, go, level choosing);
-    //RETURN: "back_clicked", "go_clicked", "level_clicked"
+    //RESULT: Event handling regarding levels choice (clicking buttons: back, go, level choosing);
+    //        when level chosen it changes texture color to green.
+    //RETURN: "back", "go", "";
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
            std::string name_of_clicked_button = detectButtonContainsMouse(window);
@@ -258,6 +262,8 @@ std::string Levels::eventHandling(sf::RenderWindow &window)
            else if(std::isdigit(name_of_clicked_button[0]))
            {
                //EVENT FOR LEVEL SELECT
+               chooseoption_sound.play();
+
                const int chosen_level = std::stoi(name_of_clicked_button);
                const sf::Sprite tmp_sprite = levels_vector[chosen_level];
 
@@ -297,7 +303,8 @@ std::string Levels::eventHandling(sf::RenderWindow &window)
 void Levels::dynamicMenu(sf::RenderWindow &window)
 {
     //IN: Rendered window;
-    //RESULT: Changed scale of menu button while mouse cursor is within their boundaries;
+    //RESULT: Changed scale of levels, "go" and "back" buttons while mouse cursor is within their boundaries;
+    //        Initialization of playSoundOnChange(std::string).
 
  std::string button = detectButtonContainsMouse(window);
 

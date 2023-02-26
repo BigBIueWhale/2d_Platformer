@@ -50,19 +50,31 @@ OBJECTS_DIR   = release
 
 ####### Files
 
-SOURCES       = ..\nienazwany1\Levels.cpp \
+SOURCES       = ..\nienazwany1\Entity.cpp \
+		..\nienazwany1\Game.cpp \
+		..\nienazwany1\Levels.cpp \
 		..\nienazwany1\MainMenu.cpp \
+		..\nienazwany1\Player.cpp \
 		..\nienazwany1\WindowHandler.cpp \
 		..\nienazwany1\main.cpp 
-OBJECTS       = release/Levels.o \
+OBJECTS       = release/Entity.o \
+		release/Game.o \
+		release/Levels.o \
 		release/MainMenu.o \
+		release/Player.o \
 		release/WindowHandler.o \
 		release/main.o
 
-DIST          =  ..\nienazwany1\Levels.h \
+DIST          =  ..\nienazwany1\Entity.h \
+		..\nienazwany1\Game.h \
+		..\nienazwany1\Levels.h \
 		..\nienazwany1\MainMenu.h \
-		..\nienazwany1\WindowHandler.h ..\nienazwany1\Levels.cpp \
+		..\nienazwany1\Player.h \
+		..\nienazwany1\WindowHandler.h ..\nienazwany1\Entity.cpp \
+		..\nienazwany1\Game.cpp \
+		..\nienazwany1\Levels.cpp \
 		..\nienazwany1\MainMenu.cpp \
+		..\nienazwany1\Player.cpp \
 		..\nienazwany1\WindowHandler.cpp \
 		..\nienazwany1\main.cpp
 QMAKE_TARGET  = nienazwany1
@@ -84,10 +96,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) nienazwany1.zip $(SOURCES) $(DIST) ..\nienazwany1\nienazwany1.pro C:\Qt2\6.4.2\mingw_64\mkspecs\features\spec_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\device_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\common\sanitize.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\gcc-base.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\g++-base.conf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt2\6.4.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\g++-win32.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt2\6.4.2\mingw_64\mkspecs\qconfig.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt_functions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt2\6.4.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt2\6.4.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\toolchain.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\default_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resolve_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\default_post.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\build_pass.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\console.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qml_debug.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\entrypoint.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\precompile_header.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\warn_on.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resources_functions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resources.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\moc.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qmake_use.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\file_copies.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\exceptions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\yacc.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\lex.prf ..\nienazwany1\nienazwany1.pro C:\Qt2\6.4.2\mingw_64\lib\Qt6Core.prl    C:\Qt2\6.4.2\mingw_64\mkspecs\features\data\dummy.cpp ..\nienazwany1\Levels.h ..\nienazwany1\MainMenu.h ..\nienazwany1\WindowHandler.h  ..\nienazwany1\Levels.cpp ..\nienazwany1\MainMenu.cpp ..\nienazwany1\WindowHandler.cpp ..\nienazwany1\main.cpp    
+	$(ZIP) nienazwany1.zip $(SOURCES) $(DIST) ..\nienazwany1\nienazwany1.pro C:\Qt2\6.4.2\mingw_64\mkspecs\features\spec_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\device_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\common\sanitize.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\gcc-base.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\g++-base.conf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt2\6.4.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\g++-win32.conf C:\Qt2\6.4.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt2\6.4.2\mingw_64\mkspecs\qconfig.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt_functions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt2\6.4.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt2\6.4.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\toolchain.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\default_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resolve_config.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\default_post.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\build_pass.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\win32\console.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qml_debug.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\entrypoint.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\precompile_header.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\warn_on.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qt.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resources_functions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\resources.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\moc.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\qmake_use.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\file_copies.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\exceptions.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\yacc.prf C:\Qt2\6.4.2\mingw_64\mkspecs\features\lex.prf ..\nienazwany1\nienazwany1.pro C:\Qt2\6.4.2\mingw_64\lib\Qt6Core.prl    C:\Qt2\6.4.2\mingw_64\mkspecs\features\data\dummy.cpp ..\nienazwany1\Entity.h ..\nienazwany1\Game.h ..\nienazwany1\Levels.h ..\nienazwany1\MainMenu.h ..\nienazwany1\Player.h ..\nienazwany1\WindowHandler.h  ..\nienazwany1\Entity.cpp ..\nienazwany1\Game.cpp ..\nienazwany1\Levels.cpp ..\nienazwany1\MainMenu.cpp ..\nienazwany1\Player.cpp ..\nienazwany1\WindowHandler.cpp ..\nienazwany1\main.cpp    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\Levels.o release\MainMenu.o release\WindowHandler.o release\main.o
+	-$(DEL_FILE) release\Entity.o release\Game.o release\Levels.o release\MainMenu.o release\Player.o release\WindowHandler.o release\main.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -129,6 +141,180 @@ compiler_clean: compiler_moc_predefs_clean
 
 
 ####### Compile
+
+release/Entity.o: ../nienazwany1/Entity.cpp ../nienazwany1/Entity.h \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Config.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Entity.o ..\nienazwany1\Entity.cpp
+
+release/Game.o: ../nienazwany1/Game.cpp ../nienazwany1/Game.h \
+		../nienazwany1/WindowHandler.h \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Config.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Music.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
+		../nienazwany1/Player.h \
+		../nienazwany1/Entity.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Game.o ..\nienazwany1\Game.cpp
 
 release/Levels.o: ../nienazwany1/Levels.cpp ../nienazwany1/Levels.h \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \
@@ -320,6 +506,84 @@ release/MainMenu.o: ../nienazwany1/MainMenu.cpp ../nienazwany1/MainMenu.h \
 		../nienazwany1/WindowHandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MainMenu.o ..\nienazwany1\MainMenu.cpp
 
+release/Player.o: ../nienazwany1/Player.cpp ../nienazwany1/Player.h \
+		../nienazwany1/Entity.h \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Config.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Clock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Time.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Err.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/InputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Lock.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Mutex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Sleep.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Utf.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/String.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Thread.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector2.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/System/Vector3.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Context.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Event.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Touch.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/Window.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Image.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/View.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Player.o ..\nienazwany1\Player.cpp
+
 release/WindowHandler.o: ../nienazwany1/WindowHandler.cpp ../nienazwany1/WindowHandler.h \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Window.hpp \
@@ -488,7 +752,8 @@ release/main.o: ../nienazwany1/main.cpp ../../../APLIKACJEINSTALACJA/sfml/SFML-2
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
-		../nienazwany1/MainMenu.h \
+		../nienazwany1/Game.h \
+		../nienazwany1/WindowHandler.h \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/Export.hpp \
@@ -506,7 +771,9 @@ release/main.o: ../nienazwany1/main.cpp ../../../APLIKACJEINSTALACJA/sfml/SFML-2
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
 		../../../APLIKACJEINSTALACJA/sfml/SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
-		../nienazwany1/WindowHandler.h \
+		../nienazwany1/Player.h \
+		../nienazwany1/Entity.h \
+		../nienazwany1/MainMenu.h \
 		../nienazwany1/Levels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\nienazwany1\main.cpp
 

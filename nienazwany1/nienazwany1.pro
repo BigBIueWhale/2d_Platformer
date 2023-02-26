@@ -28,8 +28,11 @@ DEPENDPATH += "E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\include" #change this
 
 
 SOURCES += \
+        Entity.cpp \
+        Game.cpp \
         Levels.cpp \
         MainMenu.cpp \
+        Player.cpp \
         WindowHandler.cpp \
         main.cpp
 
@@ -39,6 +42,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Entity.h \
+    Game.h \
     Levels.h \
     MainMenu.h \
+    Player.h \
     WindowHandler.h
