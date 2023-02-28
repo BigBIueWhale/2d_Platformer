@@ -30,7 +30,7 @@ int main()
         //############################# EVENTS ######################################
 
         while(_window.pollEvent(event)){
-            if(event.key.code == sf::Keyboard::Space)
+            if(event.key.code == sf::Keyboard::X)
             {
                 _window.close();
             }
@@ -68,11 +68,6 @@ int main()
            //START THE GAME
 
        }
-
-
-
-
-
 
     }
 

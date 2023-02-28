@@ -1,5 +1,10 @@
 #include "Player.h"
 
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 Player::Player()
 {
     player_texture_.loadFromFile("textures\\game\\player.png");
@@ -8,6 +13,9 @@ Player::Player()
     player_sprite_.setPosition(100,100);
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture)
 {
     player_texture.loadFromFile("textures\\game\\player.png");
@@ -15,10 +23,18 @@ sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_text
     player_sprite.setPosition(100,100);
     return player_sprite;
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 void Player::drawWindow(sf::RenderWindow &window) const
 {
     window.draw(player_sprite_);
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::animate()
 {
@@ -58,7 +74,7 @@ void Player::animate()
             xTexture = 5 - xTexture;
         }
         sf::Clock clock_animate;
-        switch(xTexture)
+        switch(xTexture) //animation of walking
         {
         case 0:
             player_sprite_.setTextureRect(sf::IntRect(80,16,36,64));
@@ -87,8 +103,16 @@ void Player::animate()
     }
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
-
+        //EVENT WHEN SPACE CLICKED
     }
+    
+// TO DO: ATTACK, ATTACK WHILE WALKING, ATTACK ON THE LADDER, GRAVITY IMPLEMENTATION, JUMP, LADDER CLIMBING, SMOOTHERING OF WALKING (now charakter does it not fluently (ma) 
+    
+    
 
 
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
