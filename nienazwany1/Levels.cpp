@@ -57,6 +57,22 @@ Levels::Levels(sf::RenderWindow &window)
     setTextAndSprites(window);
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
+
+Levels::~Levels()
+{
+    //RESULT: saves variable indicating chosen level by the player to the .txt file
+    std::ofstream file("levelsinfo\\level_name.txt");
+
+    file.clear();
+    file.seekp(0);
+    file << (chosen_level+1);
+
+    file.close();
+}
+
 
 //#########################################################################################################################################
 //#########################################################################################################################################
@@ -264,7 +280,7 @@ std::string Levels::eventHandling(sf::RenderWindow &window)
                //EVENT FOR LEVEL SELECT
                chooseoption_sound.play();
 
-               const int chosen_level = std::stoi(name_of_clicked_button);
+               chosen_level = std::stoi(name_of_clicked_button);
                const sf::Sprite tmp_sprite = levels_vector[chosen_level];
 
                if(what_level_chosen == -1)

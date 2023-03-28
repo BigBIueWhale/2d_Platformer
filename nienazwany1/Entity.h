@@ -1,6 +1,6 @@
 #ifndef ENTITY_H
 #define ENTITY_H
-
+#pragma once
 #endif // ENTITY_H
 
 #include <SFML/Graphics.hpp>
@@ -20,12 +20,10 @@ protected:
     int y_pos;
 
 
-
-
     void readInfoFromFile(std::string &what_level);
 public:
-    virtual sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture)=0;
+    virtual sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture){;};
     virtual void drawWindow(sf::RenderWindow &window) const=0;
-    virtual void animate(){;};
+    virtual void animate(){;}
 
 };

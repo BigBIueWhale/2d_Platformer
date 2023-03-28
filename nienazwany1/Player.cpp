@@ -1,12 +1,21 @@
 #include "Player.h"
 
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 Player::Player()
 {
     player_texture_.loadFromFile("textures\\game\\player.png");
     player_sprite_.setTexture(player_texture_);
     player_sprite_.setTextureRect(sf::IntRect(28,16,36,64));
+    player_sprite_.setScale(0.7,0.7);
     player_sprite_.setPosition(100,100);
 }
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture)
 {
@@ -15,10 +24,18 @@ sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_text
     player_sprite.setPosition(100,100);
     return player_sprite;
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 void Player::drawWindow(sf::RenderWindow &window) const
 {
     window.draw(player_sprite_);
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::animate()
 {
@@ -39,7 +56,7 @@ void Player::animate()
             //RIGHT
             if(!turned_right)
             {
-            player_sprite_.setScale(1.f, 1.f);
+            player_sprite_.setScale(0.7f, 0.7f);
             player_sprite_.move(-player_sprite_.getLocalBounds().width, 0);
             turned_right = 1;
             }
@@ -50,7 +67,7 @@ void Player::animate()
             //LEFT
             if(turned_right)
             {
-            player_sprite_.setScale(-1.f, 1.f);
+            player_sprite_.setScale(-0.7f, 0.7f);
             player_sprite_.move(player_sprite_.getLocalBounds().width, 0);
             turned_right = 0;
             }
@@ -58,7 +75,7 @@ void Player::animate()
             xTexture = 5 - xTexture;
         }
         sf::Clock clock_animate;
-        switch(xTexture)
+        switch(xTexture) //animation of walking
         {
         case 0:
             player_sprite_.setTextureRect(sf::IntRect(80,16,36,64));
@@ -87,8 +104,16 @@ void Player::animate()
     }
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
-
+        //EVENT WHEN SPACE CLICKED
     }
+    
+// TO DO: ATTACK, ATTACK WHILE WALKING, ATTACK ON THE LADDER, GRAVITY IMPLEMENTATION, JUMP, LADDER CLIMBING, SMOOTHERING OF WALKING (now charakter does it not fluently (ma) 
+    
+    
 
 
 }
+
+
+//#########################################################################################################################################
+//#########################################################################################################################################

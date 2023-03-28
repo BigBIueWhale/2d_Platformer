@@ -15,7 +15,7 @@ private:
 
 
 protected:
-    int chosen_level = 1;
+    int chosen_level=1;
     sf::Music changeoption_sound;
     sf::Music chooseoption_sound;
     virtual void dynamicMenu(sf::RenderWindow &window)=0;

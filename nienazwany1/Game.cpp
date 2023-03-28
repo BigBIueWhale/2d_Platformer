@@ -1,7 +1,9 @@
 #include "Game.h"
+#include "map.h"
 
 Game::Game()
 {
+    entities_vector.push_back(std::make_unique<Map>());
     entities_vector.push_back(std::make_unique<Player>());
 
 
@@ -15,7 +17,7 @@ Game::Game()
 std::string Game::eventHandling(sf::RenderWindow &window)
 {
 
-        entities_vector[0]->animate(); //movement of the player
+        entities_vector[1]->animate(); //movement of the player
 
 
 

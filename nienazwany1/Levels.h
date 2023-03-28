@@ -7,6 +7,7 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -55,6 +56,8 @@ private:
 public:
 
     Levels(sf::RenderWindow &window);
+    ~Levels();
+
     std::string detectButtonContainsMouse(sf::RenderWindow &window);
 
     virtual void drawWindow(sf::RenderWindow &window) override; // draw levels

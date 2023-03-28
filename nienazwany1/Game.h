@@ -3,6 +3,7 @@
 
 #include "WindowHandler.h"
 #include "Player.h"
+#include "map.h"
 class Game : public WindowHandler
 {
 

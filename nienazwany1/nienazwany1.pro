@@ -34,7 +34,8 @@ SOURCES += \
         MainMenu.cpp \
         Player.cpp \
         WindowHandler.cpp \
-        main.cpp
+        main.cpp \
+        map.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,4 +48,5 @@ HEADERS += \
     Levels.h \
     MainMenu.h \
     Player.h \
-    WindowHandler.h
+    WindowHandler.h \
+    map.h
