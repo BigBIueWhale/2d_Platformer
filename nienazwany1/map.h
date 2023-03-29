@@ -18,6 +18,7 @@ private:
     sf::Sprite floor_bl_basic_sprite_;
     sf::Sprite floor_bm_basic_sprite_;
     sf::Sprite floor_br_basic_sprite_;
+
     sf::Sprite floor_single_basic_sprite_;
 
     sf::Sprite floor_l_basic_sprite_;
@@ -25,7 +26,15 @@ private:
     sf::Sprite floor_r_basic_sprite_;
 
     //FANCY FLOOR
-
+    sf::Sprite floor_ul_fancy_sprite_;
+    sf::Sprite floor_um_fancy_sprite_;
+    sf::Sprite floor_ur_fancy_sprite_;
+    sf::Sprite floor_ml_fancy_sprite_;
+    sf::Sprite floor_mm_fancy_sprite_;
+    sf::Sprite floor_mr_fancy_sprite_;
+    sf::Sprite floor_bl_fancy_sprite_;
+    sf::Sprite floor_bm_fancy_sprite_;
+    sf::Sprite floor_br_fancy_sprite_;
 
     sf::Sprite floor_single_fancy_sprite_;
 
@@ -40,7 +49,7 @@ private:
     sf::Sprite bridge_r_sprite_;
 
 
-    //BACKGROUND
+    //##################BACKGROUND
     sf::Sprite background_sprite_;
 
     //#####################DECORATIONS
@@ -49,10 +58,14 @@ private:
     sf::Sprite sign2_sprite_;
     sf::Sprite sign3_sprite_;
     sf::Sprite sign4_sprite_;
+
+    sf::Sprite pile1_sprite_;
+    sf::Sprite pile2_sprite_;
+    sf::Sprite pile3_sprite_;
     //VARIABLES
 
     //map sizes
-    const int rows = 10;
+    const int rows = 20;
     const int cols = 60;
 
     //vector of objects on map

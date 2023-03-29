@@ -67,10 +67,51 @@ Map::Map()
     floor_m_basic_sprite_.setTextureRect(sf::IntRect(768,320,64,64));
     floor_m_basic_sprite_.setScale(0.6,0.6);
 
+    //TOP FANCY
+    floor_ul_fancy_sprite_.setTexture(map_texture_);
+    floor_ul_fancy_sprite_.setTextureRect(sf::IntRect(384,192,64,64));
+    floor_ul_fancy_sprite_.setScale(0.6,0.6);
+
+    floor_um_fancy_sprite_.setTexture(map_texture_);
+    floor_um_fancy_sprite_.setTextureRect(sf::IntRect(448,192,64,64));
+    floor_um_fancy_sprite_.setScale(0.6,0.6);
+
+    floor_ur_fancy_sprite_.setTexture(map_texture_);
+    floor_ur_fancy_sprite_.setTextureRect(sf::IntRect(512,192,64,64));
+    floor_ur_fancy_sprite_.setScale(0.6,0.6);
+    //MIDLE FANCY
+
+    floor_ml_fancy_sprite_.setTexture(map_texture_);
+    floor_ml_fancy_sprite_.setTextureRect(sf::IntRect(384,256,64,64));
+    floor_ml_fancy_sprite_.setScale(0.6,0.6);
+
+    floor_mm_fancy_sprite_.setTexture(map_texture_);
+    floor_mm_fancy_sprite_.setTextureRect(sf::IntRect(448,256,64,64));
+    floor_mm_fancy_sprite_.setScale(0.6,0.6);
+
+
+    floor_mr_fancy_sprite_.setTexture(map_texture_);
+    floor_mr_fancy_sprite_.setTextureRect(sf::IntRect(512,256,64,64));
+    floor_mr_fancy_sprite_.setScale(0.6,0.6);
+
+
+    //BOTTOM FANCY
+    floor_bl_fancy_sprite_.setTexture(map_texture_);
+    floor_bl_fancy_sprite_.setTextureRect(sf::IntRect(384,320,64,64));
+    floor_bl_fancy_sprite_.setScale(0.6,0.6);
+
+    floor_bm_fancy_sprite_.setTexture(map_texture_);
+    floor_bm_fancy_sprite_.setTextureRect(sf::IntRect(448,320,64,64));
+    floor_bm_fancy_sprite_.setScale(0.6,0.6);
+
+    floor_br_fancy_sprite_.setTexture(map_texture_);
+    floor_br_fancy_sprite_.setTextureRect(sf::IntRect(512,320,64,64));
+    floor_br_fancy_sprite_.setScale(0.6,0.6);
+
 
     //SINGLE FANCY
     floor_single_fancy_sprite_.setTexture(map_texture_);
-    floor_single_fancy_sprite_.setTextureRect(sf::IntRect(892,192,64,64));
+    floor_single_fancy_sprite_.setTextureRect(sf::IntRect(896,192,64,64));
     floor_single_fancy_sprite_.setScale(0.6,0.6);
 
     //TRIPLE FANCY
@@ -109,6 +150,7 @@ Map::Map()
 
 
     //###########DECORATIONS
+    //signs
     sign1_sprite_.setTexture(map_texture_);
     sign1_sprite_.setTextureRect(sf::IntRect(204,64,50,64));
     sign1_sprite_.setScale(0.6,0.6);
@@ -124,6 +166,19 @@ Map::Map()
     sign4_sprite_.setTexture(map_texture_);
     sign4_sprite_.setTextureRect(sf::IntRect(584,64,50,64));
     sign4_sprite_.setScale(0.6,0.6);
+
+    //piles
+    pile1_sprite_.setTexture(map_texture_);
+    pile1_sprite_.setTextureRect(sf::IntRect(704,64,64,64));
+    pile1_sprite_.setScale(0.6,0.6);
+
+    pile2_sprite_.setTexture(map_texture_);
+    pile2_sprite_.setTextureRect(sf::IntRect(768,0,64,128));
+    pile2_sprite_.setScale(0.6,0.6);
+
+    pile3_sprite_.setTexture(map_texture_);
+    pile3_sprite_.setTextureRect(sf::IntRect(832,0,64,128));
+    pile3_sprite_.setScale(0.6,0.6);
 
 
     //FUNCTIONS
@@ -151,8 +206,52 @@ void Map::loadMapFromFile()
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 file.get(letter);
-
-                if(letter == 'q')
+                if(letter == 'Q')
+                {
+                    floor_ul_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_ul_fancy_sprite_);
+                }
+                else if(letter == 'W')
+                {
+                    floor_um_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_um_fancy_sprite_);
+                }
+                else if(letter == 'E')
+                {
+                    floor_ur_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_ur_fancy_sprite_);
+                }
+                else if(letter == 'A')
+                {
+                    floor_ml_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_ml_fancy_sprite_);
+                }
+                else if(letter == 'S')
+                {
+                    floor_mm_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_mm_fancy_sprite_);
+                }
+                else if(letter == 'D')
+                {
+                    floor_mr_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_mr_fancy_sprite_);
+                }
+                else if(letter == 'Z')
+                {
+                    floor_bl_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_bl_fancy_sprite_);
+                }
+                else if(letter == 'X')
+                {
+                    floor_bm_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_bm_fancy_sprite_);
+                }
+                else if(letter == 'C')
+                {
+                    floor_br_fancy_sprite_.setPosition(j*38.4,i*38.4);
+                    walls_vector.emplace_back(floor_br_fancy_sprite_);
+                }
+                else if(letter == 'q')
                 {
                     floor_ul_basic_sprite_.setPosition(j*38.4,i*38.4);
                     walls_vector.emplace_back(floor_ul_basic_sprite_);
@@ -272,6 +371,21 @@ void Map::loadMapFromFile()
                     sign4_sprite_.setPosition(j*38.4,i*38.4);
                     decorations_vector.emplace_back(sign4_sprite_);
                 }
+                else if(letter == 'u')
+                {
+                    pile1_sprite_.setPosition(j*38.4,i*38.4);
+                    decorations_vector.emplace_back(pile1_sprite_);
+                }
+                else if(letter == 'U')
+                {
+                    pile2_sprite_.setPosition(j*38.4,i*38.4-36);
+                    decorations_vector.emplace_back(pile2_sprite_);
+                }
+                else if(letter == 'i')
+                {
+                    pile3_sprite_.setPosition(j*38.4,i*38.4-36);
+                    decorations_vector.emplace_back(pile3_sprite_);
+                }
             }
         }
 
@@ -283,20 +397,6 @@ void Map::drawWindow(sf::RenderWindow &window) const
 {
     // IN: Rendered window;
     // RESULT: Draws map in the provided window;
-
-
-    //TESTING IF TEXTURES ARE CORRECT:
-
-//    window.draw(floor_ul_basic_sprite_);
-//    window.draw(floor_um_basic_sprite_);
-//    window.draw(floor_ur_basic_sprite_);
-//    window.draw(floor_ml_basic_sprite_);
-//    window.draw(floor_mm_basic_sprite_);
-//    window.draw(floor_mr_basic_sprite_);
-//    window.draw(floor_bl_basic_sprite_);
-//    window.draw(floor_bm_basic_sprite_);
-//    window.draw(floor_br_basic_sprite_);
-//    window.draw(background_sprite_);
 
     for(const sf::Sprite &el : decorations_vector)
     {
