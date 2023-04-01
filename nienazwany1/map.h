@@ -9,7 +9,7 @@ private:
 
     //###################WALLS
     //BASIC FLOOR
-    sf::Sprite floor_ul_basic_sprite_;  // u - up, l - left, r - right, b - bottom, ur = up-right etc.
+    sf::Sprite floor_ul_basic_sprite_;  // u - up, l - left, r - right, b - bottom, ur = up-right etc...
     sf::Sprite floor_um_basic_sprite_;
     sf::Sprite floor_ur_basic_sprite_;
     sf::Sprite floor_ml_basic_sprite_;
@@ -62,6 +62,16 @@ private:
     sf::Sprite pile1_sprite_;
     sf::Sprite pile2_sprite_;
     sf::Sprite pile3_sprite_;
+
+    //#####################SPIKES
+
+    sf::Sprite spike_l_sprite_;
+    sf::Sprite spike_r_sprite_;
+    sf::Sprite spike_u_sprite_;
+    sf::Sprite spike_b_sprite_;
+
+
+
     //VARIABLES
 
     //map sizes
@@ -71,6 +81,7 @@ private:
     //vector of objects on map
     std::vector<sf::Sprite> walls_vector;
     std::vector<sf::Sprite> decorations_vector;
+    std::vector<sf::Sprite> spikes_vector;
 
     //FUNCTIONS
     void loadMapFromFile();
@@ -78,7 +89,9 @@ private:
 public:
     virtual void drawWindow(sf::RenderWindow &window) const override;
     Map();
-    void function_to_compile_cuz_for_now_map_is_absract(){;}
+
+    std::vector<sf::Sprite> getWalls() const;
+    std::vector<sf::Sprite> getSpikes() const;
 };
 
 #endif // MAP_H

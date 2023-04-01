@@ -79,8 +79,8 @@ Map::Map()
     floor_ur_fancy_sprite_.setTexture(map_texture_);
     floor_ur_fancy_sprite_.setTextureRect(sf::IntRect(512,192,64,64));
     floor_ur_fancy_sprite_.setScale(0.6,0.6);
-    //MIDLE FANCY
 
+    //MIDLE FANCY
     floor_ml_fancy_sprite_.setTexture(map_texture_);
     floor_ml_fancy_sprite_.setTextureRect(sf::IntRect(384,256,64,64));
     floor_ml_fancy_sprite_.setScale(0.6,0.6);
@@ -180,10 +180,37 @@ Map::Map()
     pile3_sprite_.setTextureRect(sf::IntRect(832,0,64,128));
     pile3_sprite_.setScale(0.6,0.6);
 
+    //#############SPIKES
+    spike_u_sprite_.setTexture(map_texture_);
+    spike_u_sprite_.setTextureRect(sf::IntRect(896,384,64,64));
+    spike_u_sprite_.setScale(0.6,0.6);
+
+    spike_r_sprite_.setTexture(map_texture_);
+    spike_r_sprite_.setTextureRect(sf::IntRect(960,448,64,64));
+    spike_r_sprite_.setScale(0.6,0.6);
+
+    spike_b_sprite_.setTexture(map_texture_);
+    spike_b_sprite_.setTextureRect(sf::IntRect(896,512,64,64));
+    spike_b_sprite_.setScale(0.6,0.6);
+
+    spike_l_sprite_.setTexture(map_texture_);
+    spike_l_sprite_.setTextureRect(sf::IntRect(832,448,64,64));
+    spike_l_sprite_.setScale(0.6,0.6);
+
 
     //FUNCTIONS
     loadMapFromFile();
 
+}
+
+std::vector<sf::Sprite> Map::getWalls() const
+{
+    return walls_vector;
+}
+
+std::vector<sf::Sprite> Map::getSpikes() const
+{
+    return spikes_vector;
 }
 
 void Map::loadMapFromFile()
@@ -206,7 +233,11 @@ void Map::loadMapFromFile()
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 file.get(letter);
-                if(letter == 'Q')
+                if(letter=='-')
+                {
+                    //DO NOTHING
+                }
+                else if(letter == 'Q')
                 {
                     floor_ul_fancy_sprite_.setPosition(j*38.4,i*38.4);
                     walls_vector.emplace_back(floor_ul_fancy_sprite_);
@@ -386,6 +417,26 @@ void Map::loadMapFromFile()
                     pile3_sprite_.setPosition(j*38.4,i*38.4-36);
                     decorations_vector.emplace_back(pile3_sprite_);
                 }
+                else if(letter == 'O')
+                {
+                    spike_u_sprite_.setPosition(j*38.4,i*38.4);
+                    spikes_vector.emplace_back(spike_u_sprite_);
+                }
+                else if(letter == 'o')
+                {
+                    spike_r_sprite_.setPosition(j*38.4,i*38.4);
+                    spikes_vector.emplace_back(spike_r_sprite_);
+                }
+                else if(letter == 'P')
+                {
+                    spike_b_sprite_.setPosition(j*38.4,i*38.4);
+                    decorations_vector.emplace_back(spike_b_sprite_);
+                }
+                else if(letter == 'p')
+                {
+                    spike_l_sprite_.setPosition(j*38.4,i*38.4);
+                    spikes_vector.emplace_back(spike_l_sprite_);
+                }
             }
         }
 
@@ -399,6 +450,10 @@ void Map::drawWindow(sf::RenderWindow &window) const
     // RESULT: Draws map in the provided window;
 
     for(const sf::Sprite &el : decorations_vector)
+    {
+        window.draw(el);
+    }
+    for(const sf::Sprite &el : spikes_vector)
     {
         window.draw(el);
     }

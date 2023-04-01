@@ -24,6 +24,6 @@ protected:
 public:
     virtual sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture){;};
     virtual void drawWindow(sf::RenderWindow &window) const=0;
-    virtual void animate(){;}
+    virtual void animate(){;};
 
 };

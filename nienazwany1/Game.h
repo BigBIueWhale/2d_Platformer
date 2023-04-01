@@ -10,7 +10,23 @@ class Game : public WindowHandler
 private:
     virtual void dynamicMenu(sf::RenderWindow &window) override{;};
 
+
+    Player* player;
+    sf::FloatRect player_bounds;
+    sf:: Vector2f player_velocities;
+
+    Map* map;
+    std::vector<sf::Sprite> walls_vector;
+    std::vector<sf::Sprite> spikes_vector;
+
+    //collisions
+    sf::FloatRect player_next_pos;
+    bool space_clicked=0;
+    sf::FloatRect walls;
+
+
     std::vector<std::unique_ptr<Entity>> entities_vector;
+
 
 public:
     Game();

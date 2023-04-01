@@ -197,7 +197,7 @@ void Levels::countLevels()
 
       if (dp != NULL)
       {
-        while (ep = readdir(dp))
+        while (readdir(dp))
           number_of_levels++;
 
         (void) closedir(dp);
