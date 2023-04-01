@@ -5,14 +5,13 @@
 //#########################################################################################################################################
 
 Player::Player()
-{   //RESULT: INIT
+{   //RESULT: Init and seplayer texture
     player_texture_.loadFromFile("textures\\game\\player.png");
     player_sprite_.setTexture(player_texture_);
     player_sprite_.setTextureRect(sf::IntRect(28,16,36,64));
     player_sprite_.setScale(0.7,0.7);
     player_sprite_.setPosition(100,100);
 
-    //animationTimer.restart();
 }
 
 //#########################################################################################################################################

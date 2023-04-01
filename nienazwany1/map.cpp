@@ -4,8 +4,8 @@ Map::Map()
 {
     //RESULT: INITIALIZATION OF loadMapFromFile, TEXTURE AND SPRITES
 
-
     map_texture_.loadFromFile("textures\\game\\tiles.png");
+
 
     //#############WALLS
     //TOP BASIC
@@ -204,12 +204,12 @@ Map::Map()
 }
 
 std::vector<sf::Sprite> Map::getWalls() const
-{
+{   //RETURNS : ALL WALLS ON THE MAP;
     return walls_vector;
 }
 
 std::vector<sf::Sprite> Map::getSpikes() const
-{
+{   //RETURNS :ALL SPIKES ON THE MAP;
     return spikes_vector;
 }
 

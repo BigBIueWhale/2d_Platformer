@@ -20,8 +20,9 @@ private:
     std::vector<sf::Sprite> spikes_vector;
 
     //collisions
-    sf::FloatRect player_next_pos;
-    bool space_clicked=0;
+    sf::FloatRect player_move_bounds;
+    sf::FloatRect player_jump_bounds;
+    sf::FloatRect player_cancel_jump_bounds;
     sf::FloatRect walls;
 
 

@@ -18,7 +18,7 @@ std::string Game::eventHandling(sf::RenderWindow &window)
     player->move();
 
 
-   //###########VALUE GETTERS
+   //###########VALUE GETTERS//INIT  #####  <---- PUT IN ANOTHER FUNCTION LATER
     //MAP
    walls_vector = map->getWalls();
    spikes_vector = map->getSpikes();
@@ -26,11 +26,25 @@ std::string Game::eventHandling(sf::RenderWindow &window)
    player_bounds = player->getBounds();
    player_velocities = player->getVelocity();
 
+
    //Collision detection:
-    player_next_pos = player_bounds;
+    player_move_bounds = player_bounds;
+    player_move_bounds.height -=5;
+
+    player_jump_bounds = player_bounds;
+    player_jump_bounds.top =player_jump_bounds.top + player_jump_bounds.height - 7.0;
+    player_jump_bounds.height = 7.0;
+
+    player_cancel_jump_bounds = player_bounds;
+    player_cancel_jump_bounds.top -= 8.0;
+    player_cancel_jump_bounds.height = 8.0;
+
+
+
+
 
 //###########################################################################################################
-//###### MOVE LEFT AND RIGHT + COLLISIONS
+//###### MOVE LEFT AND RIGHT PLAYER + COLLISIONS
 
 player->setBoolRightMove(0);
 player->setBoolLeftMove(0);
@@ -39,11 +53,11 @@ player->setCancelJump(0);
 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (player_bounds.left+player_bounds.width + 2) < window.getSize().x)
 {
     player->setBoolRightMove(1);
-    player_next_pos.left +=2;
+   player_move_bounds.left +=2;
 
     for(auto &el : walls_vector)
     {
-        if(el.getGlobalBounds().intersects(player_next_pos))
+        if(el.getGlobalBounds().intersects(player_move_bounds))
         {
             player->setBoolRightMove(0);
             break;
@@ -53,11 +67,11 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (player_bounds.left+player
 else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (player_bounds.left - 2) > 0)
 {
     player->setBoolLeftMove(1);
-    player_next_pos.left -=4;
+    player_move_bounds.left -=2;
 
     for(auto &el : walls_vector)
     {
-        if(el.getGlobalBounds().intersects(player_next_pos))
+        if(el.getGlobalBounds().intersects(player_move_bounds))
         {
             player->setBoolLeftMove(0);
             break;
@@ -70,44 +84,33 @@ else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (player_bounds.left - 
 //##########JUMPS AND GRAVITY + COLLISIONS
 
 //GRAVITY
-
-player_next_pos.height += 7; // prevent sprite from sticking to the ground
-player_next_pos.left += 2; // prevent sprite from sticking to the wall while falling
-player_next_pos.width -= +4 ; // prevent sprite from sticking to the wall while falling
-
 player->setBoolGravitation(1);
 for(auto &el : walls_vector)
 {
-    if(el.getGlobalBounds().intersects(player_next_pos))
+    if(el.getGlobalBounds().intersects(player_jump_bounds))
     {
         player->setBoolGravitation(0);
-        player->setBoolJump(0);
         break;
     }
 }
 
+//JUMP IF SPACE
 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 {
     for(auto &el : walls_vector)
     {
-        if(el.getGlobalBounds().intersects(player_next_pos))
+        if(el.getGlobalBounds().intersects(player_jump_bounds))
         {
             player->setBoolJump(1);
-            space_clicked = 1;
             break;
         }
     }
 }
 
-player_bounds.top -= 10;
-player_bounds.left += 2;
-player_bounds.width -= 4;
-
+//JUMP CANCEL IF PLAYERS TOP HITS WALL
 for(auto &el : walls_vector)
 {
-    walls = el.getGlobalBounds();
-    walls.top +=5;
-    if(walls.intersects(player_bounds))
+    if(el.getGlobalBounds().intersects(player_cancel_jump_bounds))
     {
         player->setCancelJump(1);
         break;
