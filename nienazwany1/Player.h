@@ -8,6 +8,9 @@
 class Player : public Entity
 {
 private:
+    sf::View game_view;
+
+
     sf::Sprite player_sprite_;
     sf::Texture player_texture_;
     sf::FloatRect playerBounds;
@@ -28,7 +31,7 @@ private:
     bool cancel_jump = 0;
 //- - - - - - - - - - -
     bool gravitation;
-    const float gravity = 3.0;
+    const float gravity = 4.0;
     const int jump_power = 6;
 
 //- - - - - - - - - - -
@@ -42,7 +45,7 @@ public:
 
     void move();
     sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture) override;
-    virtual void drawWindow(sf::RenderWindow &window) const override;
+    virtual void drawWindow(sf::RenderWindow &window) override;
 
 //- - - - - - - - - - -
     const sf::FloatRect getBounds();

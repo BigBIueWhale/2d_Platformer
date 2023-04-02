@@ -1,10 +1,21 @@
 #include "map.h"
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 Map::Map()
 {
     //RESULT: INITIALIZATION OF loadMapFromFile, TEXTURE AND SPRITES
 
     map_texture_.loadFromFile("textures\\game\\tiles.png");
+    map_background.loadFromFile("textures\\game\\background.png");
+
+    //BACKGROUND
+    map_background.setRepeated(1);
+    background_sprite_.setTexture(map_background);
+    background_sprite_.setTextureRect(sf::IntRect(0,0,cols*38.4 + 1920,1080));
+    background_sprite_.setPosition(-900,-500);
+    background_sprite_.setScale(1,1);
 
 
     //#############WALLS
@@ -63,9 +74,9 @@ Map::Map()
     floor_m_basic_sprite_.setTextureRect(sf::IntRect(704,320,64,64));
     floor_m_basic_sprite_.setScale(0.6,0.6);
 
-    floor_m_basic_sprite_.setTexture(map_texture_);
-    floor_m_basic_sprite_.setTextureRect(sf::IntRect(768,320,64,64));
-    floor_m_basic_sprite_.setScale(0.6,0.6);
+    floor_r_basic_sprite_.setTexture(map_texture_);
+    floor_r_basic_sprite_.setTextureRect(sf::IntRect(768,320,64,64));
+    floor_r_basic_sprite_.setScale(0.6,0.6);
 
     //TOP FANCY
     floor_ul_fancy_sprite_.setTexture(map_texture_);
@@ -143,10 +154,6 @@ Map::Map()
     bridge_r_sprite_.setScale(0.6,0.6);
 
 
-    //BACKGROUND
-    background_sprite_.setTexture(map_texture_);
-    background_sprite_.setTextureRect(sf::IntRect(64,320,256,256));
-    background_sprite_.setScale(0.6,0.6);
 
 
     //###########DECORATIONS
@@ -203,15 +210,24 @@ Map::Map()
 
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 std::vector<sf::Sprite> Map::getWalls() const
 {   //RETURNS : ALL WALLS ON THE MAP;
     return walls_vector;
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 std::vector<sf::Sprite> Map::getSpikes() const
 {   //RETURNS :ALL SPIKES ON THE MAP;
     return spikes_vector;
 }
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Map::loadMapFromFile()
 {
@@ -444,10 +460,22 @@ void Map::loadMapFromFile()
         file.close();
 }
 
-void Map::drawWindow(sf::RenderWindow &window) const
+//#########################################################################################################################################
+//#########################################################################################################################################
+
+void Map::drawWindow(sf::RenderWindow &window)
 {
     // IN: Rendered window;
-    // RESULT: Draws map in the provided window;
+    // RESULT: Draws map in the provided window (decorations, spikes, walls);
+    //window.draw(background_sprite_);
+//    game_view.setSize(window.getSize().x, window.getSize().y);
+//    game_view.setCenter(window.getSize().x/2, window.getSize().y/2);
+//    window.setView(game_view);
+
+    //background_sprite_.move(decorations_vector[1].getGlobalBounds()..)
+    window.draw(background_sprite_);
+
+    //window.setView(window.getDefaultView());
 
     for(const sf::Sprite &el : decorations_vector)
     {
@@ -461,7 +489,5 @@ void Map::drawWindow(sf::RenderWindow &window) const
     {
         window.draw(el);
     }
-
-
 
 }

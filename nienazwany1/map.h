@@ -5,7 +5,12 @@
 class Map : public Entity
 {
 private:
+    sf::View game_view;
+
+
     sf::Texture map_texture_;
+    sf::Texture map_background;
+    sf::RectangleShape map_background_rect;
 
     //###################WALLS
     //BASIC FLOOR
@@ -87,7 +92,7 @@ private:
     void loadMapFromFile();
 
 public:
-    virtual void drawWindow(sf::RenderWindow &window) const override;
+    virtual void drawWindow(sf::RenderWindow &window)override;
     Map();
 
     std::vector<sf::Sprite> getWalls() const;

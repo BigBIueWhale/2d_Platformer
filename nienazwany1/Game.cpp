@@ -2,7 +2,8 @@
 #include "map.h"
 #include <iostream>
 Game::Game()
-{
+{ //RESULT: Push back game objects to vector + dynamic cast
+
     entities_vector.push_back(std::make_unique<Map>());
     entities_vector.push_back(std::make_unique<Player>());
 
@@ -13,7 +14,8 @@ Game::Game()
 
 
 std::string Game::eventHandling(sf::RenderWindow &window)
-{
+{//RESULT: GAME
+
     //MOVE/ANIMATIONS FUNCTIONS
     player->move();
 
@@ -50,11 +52,10 @@ player->setBoolRightMove(0);
 player->setBoolLeftMove(0);
 player->setCancelJump(0);
 
-if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (player_bounds.left+player_bounds.width + 2) < window.getSize().x)
+if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 {
     player->setBoolRightMove(1);
-   player_move_bounds.left +=2;
-
+   player_move_bounds.left +=2; // < - 2 == player velocity move left/right  !!!
     for(auto &el : walls_vector)
     {
         if(el.getGlobalBounds().intersects(player_move_bounds))
@@ -64,7 +65,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (player_bounds.left+player
         }
     }
 }
-else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (player_bounds.left - 2) > 0)
+else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 {
     player->setBoolLeftMove(1);
     player_move_bounds.left -=2;
@@ -118,13 +119,18 @@ for(auto &el : walls_vector)
 }
 
 
-//##########################################
-
 return "";
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 void Game::drawWindow(sf::RenderWindow &window)
 {
+
+
+
+    //RESULT: Draw everything on the map
     for (const auto &entity : entities_vector)
     {
         entity->drawWindow(window);

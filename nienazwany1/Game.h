@@ -8,6 +8,9 @@ class Game : public WindowHandler
 {
 
 private:
+   // sf::View game_view;
+
+
     virtual void dynamicMenu(sf::RenderWindow &window) override{;};
 
 

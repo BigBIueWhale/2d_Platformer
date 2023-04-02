@@ -5,14 +5,12 @@
 //#########################################################################################################################################
 
 Player::Player()
-{   //RESULT: INIT
+{   //RESULT: Init and set player sprite
     player_texture_.loadFromFile("textures\\game\\player.png");
     player_sprite_.setTexture(player_texture_);
     player_sprite_.setTextureRect(sf::IntRect(28,16,36,64));
     player_sprite_.setScale(0.7,0.7);
-    player_sprite_.setPosition(100,100);
-
-    //animationTimer.restart();
+    player_sprite_.setPosition(100,100); // <- has to be read from file
 }
 
 //#########################################################################################################################################
@@ -26,23 +24,36 @@ sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_text
     return player_sprite;
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
+void Player::drawWindow(sf::RenderWindow &window)
+{ //RESULT: draw player
+
+    game_view.setSize(window.getSize().x, window.getSize().y);
+    game_view.setCenter(player_sprite_.getGlobalBounds().left + (0.5*player_sprite_.getGlobalBounds().width), player_sprite_.getGlobalBounds().top+ (0.5 *player_sprite_.getGlobalBounds().height));
+    window.setView(game_view);
+    window.draw(player_sprite_);
+}
 
 //#########################################################################################################################################
 //#########################################################################################################################################
-void Player::drawWindow(sf::RenderWindow &window) const
-{ //RESULT: draw player
-    window.draw(player_sprite_);
-}
 
 const sf::FloatRect Player::getBounds()
 {   //RETURN: player boundaries
     return player_sprite_.getGlobalBounds();
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 const sf::Vector2f Player::getVelocity()
 { //RETURN: PLAYER XY VELOCITIES
     return sf::Vector2f(velocity_x,velocity_y);
 }
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::setCancelJump(const bool &value)
 {
@@ -50,33 +61,40 @@ void Player::setCancelJump(const bool &value)
     cancel_jump = value;
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 void Player::setBoolJump(const bool &allow)
 {  //RESULT: sets bool jump
     jump = allow;
 }
+
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::setBoolGravitation(const bool &value)
 { //RESULT: sets bool gravitation
     gravitation = value;
 }
 
-
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::setBoolRightMove(const bool &value)
 { //RESULT: sets bool move_right
     move_right = value;
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
+
 void Player::setBoolLeftMove(const bool &value)
 { //RESULT: sets bool move_left
     move_left = value;
 }
 
-
 //#########################################################################################################################################
 //#########################################################################################################################################
-
-
 
 void Player::move()
 {
@@ -117,12 +135,18 @@ void Player::move()
 
         if(elapsed > 0.01f)
         {
-            velocity_y = velocity_y + 0.16 ;
+            velocity_y = velocity_y + 0.155 ;
             jumpTimer.restart();
         }
         if(velocity_y >= gravity || cancel_jump)
         {
             gravitation = 1;
+            jump = 0;
+            jumped = 1;
+        }
+        if(velocity_y>0 && !jumped && !gravitation)
+        {
+            velocity_y = 0;
             jump = 0;
             jumped = 1;
         }
@@ -132,7 +156,7 @@ void Player::move()
     }
 
 
-
+// - - - - - - -
     elapsed = moveTimer.getElapsedTime().asSeconds();
     if(elapsed > 0.1f)
     {
@@ -145,9 +169,11 @@ void Player::move()
    this->move_left=0;
 }
 
+//#########################################################################################################################################
+//#########################################################################################################################################
 
 void Player::animate()
-{
+{ //RESULT: Animate player (only during walk - for now)
     elapsed = animationTimer.getElapsedTime().asSeconds();
 
 
