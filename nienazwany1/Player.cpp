@@ -93,6 +93,15 @@ void Player::setBoolLeftMove(const bool &value)
     move_left = value;
 }
 
+
+//#########################################################################################################################################
+//#########################################################################################################################################
+
+void Player::setBoolAttack(const bool &value)
+{
+    attack = value;
+}
+
 //#########################################################################################################################################
 //#########################################################################################################################################
 
@@ -172,12 +181,8 @@ void Player::move()
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-void Player::animate()
-{ //RESULT: Animate player (only during walk - for now)
-    elapsed = animationTimer.getElapsedTime().asSeconds();
-
-
-    //#####WALK ANIMATION
+void Player::anim_move_right_left(float &elapsed)
+{
     if(elapsed >= 0.1f && move_right==0 &&  move_left==0)
     {
        animationState=5;
@@ -222,10 +227,6 @@ void Player::animate()
         animationTimer.restart();
     }
 
-    //#####JUMP ANIMATION
-
-
-    std::cout<<player_sprite_.getGlobalBounds().left <<" ," <<" ,"<<player_sprite_.getGlobalBounds().top<<" ,"<<player_sprite_.getGlobalBounds().width<<" ,"<<player_sprite_.getGlobalBounds().height<<std::endl;
 
     //ANIMATIONS
     switch(animationState) //animation of walking
@@ -249,6 +250,53 @@ void Player::animate()
         player_sprite_.setTextureRect(sf::IntRect(24,16,36,64));
         break;
     }
+}
+
+void Player::animate()
+{ //RESULT: Animate player (only during walk - for now)
+    elapsed = animationTimer.getElapsedTime().asSeconds();
+
+    anim_move_right_left(elapsed); //Animate standing still, walking left right
+
+//    if(attack)
+//    {
+//        if(move_right)
+//        {
+
+//        }
+//        else if(move_left)
+//        {
+
+//        }
+//        else
+//        {
+
+//        }
+
+
+//        switch(animationState) //animation of walking
+//        {
+//        case 0:
+//            player_sprite_.setTextureRect(sf::IntRect(80,16,36,64));
+//            break;
+//        case 1:
+//            player_sprite_.setTextureRect(sf::IntRect(128,16,36,64));
+//            break;
+//        case 2:
+//            player_sprite_.setTextureRect(sf::IntRect(176,16,36,64));
+//            break;
+//        case 3:
+//            player_sprite_.setTextureRect(sf::IntRect(224,16,36,64));
+//            break;
+//        case 4:
+//            player_sprite_.setTextureRect(sf::IntRect(272,16,36,64));
+//            break;
+//        case 5:
+//            player_sprite_.setTextureRect(sf::IntRect(24,16,36,64));
+//            break;
+//        }
+
+//    }
 
 
 // TO DO: ATTACK, ATTACK WHILE WALKING, ATTACK ON THE LADDER, GRAVITY IMPLEMENTATION, JUMP, LADDER CLIMBING, SMOOTHERING OF WALKING (now character does not do it fluently (ma)

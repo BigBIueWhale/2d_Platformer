@@ -21,6 +21,8 @@ private:
     float elapsed;
 
     int animationState = 0;
+
+    void anim_move_right_left(float &elapsed);
  //- - - - - - - - - - -
     bool turned_right = 1;
     bool move_right;
@@ -33,6 +35,9 @@ private:
     bool gravitation;
     const float gravity = 4.0;
     const int jump_power = 6;
+
+//- - - - - - - - - - -
+    bool attack;
 
 //- - - - - - - - - - -
     float velocity_x;
@@ -56,6 +61,7 @@ public:
     void setBoolGravitation(const bool &value);
     void setBoolRightMove(const bool &value);
     void setBoolLeftMove(const bool &value);
+    void setBoolAttack(const bool &value);
 
 
 };

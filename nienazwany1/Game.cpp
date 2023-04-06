@@ -96,7 +96,7 @@ for(auto &el : walls_vector)
 }
 
 //JUMP IF SPACE
-if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 {
     for(auto &el : walls_vector)
     {
@@ -106,6 +106,10 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
             break;
         }
     }
+}
+if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+{
+    player->setBoolAttack(1);
 }
 
 //JUMP CANCEL IF PLAYERS TOP HITS WALL
