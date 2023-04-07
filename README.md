@@ -21,11 +21,11 @@ MAP:
 The map is read from a .txt file. Letters within the .txt file indicate the type of texture to be placed at the corresponding position on the map.
 The map includes decorative elements that serve a purely visual role, as well as spikes that can kill the player upon contact.
 
-Game includes two classes:
+Game includes two classes of monsters:
 DumbChaser - chases the player when within its range of sight and rushes toward the player. If the player avoids the chaser, it continues running forward until it falls or dies, or until it leaves the player's sight. The chaser's movements are animated.
 Archer - shoots arrows when the player is within its range of sight. The archer moves left and right when the player is not visible. The archer's movements and shooting are animated.
 
 When the player dies, a small window appears asking whether to restart or return to the main menu.
-The game can be paused.
+The game can be paused. Game camera follows the player.
 
 Other information such as the player's starting position, the position of monsters, and the size of the map are determined by reading from an XML file that corresponds to the selected level.
