@@ -11,8 +11,8 @@ CONFIG -= app_bundle
 ######################################################################################
 #WINDOWS
 # put SFML file in the same location as project
-LIBS += -L"E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\lib" #change this
-LIBS += -L"E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\bin" #change this
+LIBS += -L"C:\Users\sebaj\Documents\SFML-2.5.1\lib" #change this
+LIBS += -L"C:\Users\sebaj\Documents\SFML-2.5.1\bin" #change this
 
 #MAC
 #LIBS += -L"/usr/local/lib"
@@ -21,8 +21,8 @@ CONFIG(release, debug|release): LIBS += -lsfml-audio -lsfml-graphics -lsfml-syst
 CONFIG(debug  , debug|release): LIBS += -lsfml-audio -lsfml-graphics -lsfml-system -lsfml-network -lsfml-window
 
 #WINDOWS
-INCLUDEPATH += "E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\include" #change this
-DEPENDPATH += "E:\APLIKACJEINSTALACJA\sfml\SFML-2.5.1\include" #change this
+INCLUDEPATH += "C:\Users\sebaj\Documents\SFML-2.5.1\include" #change this
+DEPENDPATH += "C:\Users\sebaj\Documents\SFML-2.5.1\include" #change this
 #####################################################################################
 
 
