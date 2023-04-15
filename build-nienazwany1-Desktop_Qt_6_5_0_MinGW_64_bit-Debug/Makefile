@@ -353,6 +353,7 @@ Makefile: ../nienazwany1/nienazwany1.pro C:/Qt/6.5.0/mingw_64/mkspecs/win32-g++/
 		C:/Qt/6.5.0/mingw_64/mkspecs/features/yacc.prf \
 		C:/Qt/6.5.0/mingw_64/mkspecs/features/lex.prf \
 		../nienazwany1/nienazwany1.pro \
+		C:/Qt/6.5.0/mingw_64/lib/Qt6Xml.prl \
 		C:/Qt/6.5.0/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.5.0/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\nienazwany1\nienazwany1.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -639,6 +640,7 @@ C:/Qt/6.5.0/mingw_64/mkspecs/features/exceptions.prf:
 C:/Qt/6.5.0/mingw_64/mkspecs/features/yacc.prf:
 C:/Qt/6.5.0/mingw_64/mkspecs/features/lex.prf:
 ../nienazwany1/nienazwany1.pro:
+C:/Qt/6.5.0/mingw_64/lib/Qt6Xml.prl:
 C:/Qt/6.5.0/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.5.0/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

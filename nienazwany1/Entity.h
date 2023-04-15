@@ -13,6 +13,7 @@
 
 
 
+
 class Entity : public sf::Sprite
 {
 protected:

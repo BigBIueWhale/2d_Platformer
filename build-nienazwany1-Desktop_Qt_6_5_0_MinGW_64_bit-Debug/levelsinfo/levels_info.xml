@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<levels>
+  <level id="1" map_width="100" map_height="100">
+    <start position_x="0" position_y="0" />
+    <enemies>
+      <enemy class="class1" position_x="10" position_y="10" />
+      <enemy class="class2" position_x="20" position_y="20" />
+    </enemies>
+    <time_to_complete_seconds>120</time_to_complete_seconds>
+  </level>
+  <level id="2" map_width="150" map_height="150">
+    <start position_x="5" position_y="5" />
+    <enemies>
+      <enemy class="class3" position_x="15" position_y="15" />
+      <enemy class="class1" position_x="25" position_y="25" />
+    </enemies>
+    <time_to_complete_seconds>180</time_to_complete_seconds>
+  </level>
+  <level id="3" map_width="200" map_height="200">
+    <start position_x="10" position_y="10" />
+    <enemies>
+      <enemy class="class2" position_x="20" position_y="20" />
+      <enemy class="class3" position_x="30" position_y="30" />
+    </enemies>
+    <time_to_complete_seconds>240</time_to_complete_seconds>
+  </level>
+</levels>

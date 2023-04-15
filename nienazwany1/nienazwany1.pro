@@ -1,4 +1,5 @@
 QT -= gui
+QT += xml
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -34,6 +35,7 @@ SOURCES += \
         MainMenu.cpp \
         Player.cpp \
         WindowHandler.cpp \
+        XmlHandler.cpp \
         main.cpp \
         map.cpp
 
@@ -49,4 +51,6 @@ HEADERS += \
     MainMenu.h \
     Player.h \
     WindowHandler.h \
-    map.h
+    XmlHandler.h \
+    map.h \
+    struct_Level.h
