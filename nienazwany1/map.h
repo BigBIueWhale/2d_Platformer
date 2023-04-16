@@ -80,8 +80,8 @@ private:
     //VARIABLES
 
     //map sizes
-    const int rows = 20;
-    const int cols = 60;
+    int rows;
+    int cols;
 
     //vector of objects on map
     std::vector<sf::Sprite> walls_vector;
@@ -93,7 +93,7 @@ private:
 
 public:
     virtual void drawWindow(sf::RenderWindow &window)override;
-    Map();
+    Map(sf::Vector2i &map_size);
 
     std::vector<sf::Sprite> getWalls() const;
     std::vector<sf::Sprite> getSpikes() const;

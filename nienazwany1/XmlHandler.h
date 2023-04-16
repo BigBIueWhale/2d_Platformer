@@ -16,7 +16,7 @@
 class XmlHandler
 {
 private:
-    int level_id;
+    int level_id=4;
 
     void readLevelChosen();
 public:

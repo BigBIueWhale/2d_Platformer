@@ -3,9 +3,12 @@
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-Map::Map()
+Map::Map(sf::Vector2i &map_size)
 {
-    //RESULT: INITIALIZATION OF loadMapFromFile, TEXTURE AND SPRITES
+    //RESULT: INITIALIZATION OF loadMapFromFile, TEXTURE AND SPRITES, init size od the map
+    rows = map_size.x;
+    cols = map_size.y;
+
 
     map_texture_.loadFromFile("textures\\game\\tiles.png");
     map_background.loadFromFile("textures\\game\\background.png");

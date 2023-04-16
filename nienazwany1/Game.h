@@ -4,7 +4,6 @@
 #include "WindowHandler.h"
 #include "Player.h"
 #include "map.h"
-#include <XmlHandler.h>
 class Game : public WindowHandler
 {
 

@@ -17,7 +17,6 @@
 
 #include <vector>
 #include <WindowHandler.h>
-#include <XmlHandler.h>
 
 class Levels : public WindowHandler {
 

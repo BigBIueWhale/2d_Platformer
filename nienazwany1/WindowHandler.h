@@ -5,6 +5,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 
+#include <XmlHandler.h>
+
 
 class WindowHandler : public sf::Sprite
 {
@@ -14,7 +16,10 @@ private:
 
 
 
+
+
 protected:
+    XmlHandler xmlhandler;
     int chosen_level=1;
     sf::Music changeoption_sound;
     sf::Music chooseoption_sound;

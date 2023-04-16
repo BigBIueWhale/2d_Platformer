@@ -7,17 +7,15 @@ Game::Game()
 
     //INIT LEVEL
     struct_Level level_data;
-    XmlHandler xmlhandler;
     level_data = xmlhandler.loadLevelDataFromFile();
 
 
-    //CREATE OBJECTS
-    entities_vector.push_back(std::make_unique<Map>());
+
+    entities_vector.push_back(std::make_unique<Map>(level_data.map_size));
     entities_vector.push_back(std::make_unique<Player>(level_data.player_pos));
 
     player = dynamic_cast<Player*>(entities_vector[1].get());
     map = dynamic_cast<Map*>(entities_vector[0].get());
-
 
 }
 
@@ -51,10 +49,6 @@ std::string Game::eventHandling(sf::RenderWindow &window)
     player_cancel_jump_bounds = player_bounds;
     player_cancel_jump_bounds.top -= 8.0;
     player_cancel_jump_bounds.height = 8.0;
-
-
-
-
 
 
 
@@ -144,10 +138,7 @@ return "";
 
 void Game::drawWindow(sf::RenderWindow &window)
 {
-
-
-
-    //RESULT: Draw everything on the map
+    //RESULT: Draw everything in the game
     for (const auto &entity : entities_vector)
     {
         entity->drawWindow(window);

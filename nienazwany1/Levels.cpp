@@ -64,13 +64,13 @@ Levels::Levels(sf::RenderWindow &window)
 Levels::~Levels()
 {
     //RESULT: saves variable indicating chosen level by the player to the .txt file
-//    std::ofstream file("levelsinfo\\level_name.txt");
+    std::ofstream file("levelsinfo\\level_name.txt");
 
-//    file.clear();
-//    file.seekp(0);
-//    file << (chosen_level+1);
+    file.clear();
+    file.seekp(0);
+    file << (chosen_level+1);
 
-//    file.close();
+    file.close();
 
     xml_handler.setLevelChosen(chosen_level+1);
 
