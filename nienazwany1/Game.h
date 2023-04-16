@@ -4,13 +4,11 @@
 #include "WindowHandler.h"
 #include "Player.h"
 #include "map.h"
+#include <XmlHandler.h>
 class Game : public WindowHandler
 {
 
 private:
-   // sf::View game_view;
-
-
     virtual void dynamicMenu(sf::RenderWindow &window) override{;};
 
 

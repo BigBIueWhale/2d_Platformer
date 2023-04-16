@@ -1,0 +1,90 @@
+#include <QFile>
+#include <QXmlStreamReader>
+#include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
+
+struct Enemy {
+    std::string enemy_class;
+    int position_x;
+    int position_y;
+};
+
+struct Level {
+    int id;
+    int map_width;
+    int map_height;
+    std::vector<Enemy> enemies;
+    int time_to_complete_seconds;
+};
+
+// Funkcja pomocnicza do konwersji napisów na liczby całkowite
+int convertStringToInt(const std::string& str) {
+    int result;
+    std::stringstream ss(str);
+    ss >> result;
+    return result;
+}
+
+// Funkcja do odczytu danych z pliku XML dla danego poziomu
+Level readLevelDataFromFile(const std::string& filename, int level_id) {
+    Level level;
+
+    // Otwarcie pliku
+    QFile file(QString::fromStdString(filename));
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        std::cerr << "Błąd otwarcia pliku!" << std::endl;
+        return level;
+    }
+
+    // Przygotowanie obiektu do odczytu XML
+    QXmlStreamReader xml(&file);
+
+    // Przeszukanie pliku XML
+    while (!xml.atEnd() && !xml.hasError()) {
+        xml.readNext();
+
+        // Sprawdzenie, czy napotkano element "level" o odpowiednim ID
+        if (xml.name() == "level" && xml.attributes().value("id").toInt() == level_id) {
+            level.id = level_id;
+            level.map_width = xml.attributes().value("map_width").toInt();
+            level.map_height = xml.attributes().value("map_height").toInt();
+            level.time_to_complete_seconds = xml.readElementText().toInt();
+
+            // Przeszukanie elementu "enemies" i odczytanie danych o przeciwnikach
+            while (xml.name() != "enemies" || xml.tokenType() != QXmlStreamReader::StartElement) {
+                xml.readNext();
+            }
+
+            while (xml.readNextStartElement()) {
+                if (xml.name() == "enemy") {
+                    Enemy enemy;
+                    enemy.enemy_class = xml.attributes().value("class").toString().toStdString();
+                    enemy.position_x = xml.attributes().value("position_x").toString().toInt();
+                    enemy.position_y = xml.attributes().value("position_y").toString().toInt();
+                    level.enemies.push_back(enemy);
+                }
+            }
+
+            // Przeszukanie elementu "start" i odczytanie pozycji startowej gracza
+            while (xml.name() != "start" || xml.tokenType() != QXmlStreamReader::StartElement) {
+                xml.readNext();
+            }
+
+            int player_pos_x = xml.attributes().value("position_x").toString().toInt();
+            int player_pos_y = xml.attributes().value("position_y").toString().toInt();
+            level.player_pos = {player_pos_x, player_pos_y};
+
+            // Zakończenie przeszukiwania poziomu
+            break;
+        }
+    }
+
+    // Zamknięcie pliku i zwrócenie wyniku
+    file.close();
+    return level;
+}
+
+int main() {
+    // Odczytanie danych

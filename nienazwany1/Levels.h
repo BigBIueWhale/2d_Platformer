@@ -17,10 +17,12 @@
 
 #include <vector>
 #include <WindowHandler.h>
+#include <XmlHandler.h>
 
 class Levels : public WindowHandler {
 
 private:
+    XmlHandler xml_handler;
     float number_of_levels = 0; // number of levels available counted by countLevels(function) //lvl selected by the player by clicking on it
     int what_level_chosen = -1;
 
@@ -62,8 +64,6 @@ public:
 
     virtual void drawWindow(sf::RenderWindow &window) override; // draw levels
     virtual std::string eventHandling(sf::RenderWindow &window) override;
-
-
 };
 
 

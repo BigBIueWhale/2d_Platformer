@@ -13,8 +13,6 @@ struct struct_Level {
     std::vector<struct Enemy> enemies;
     int time_to_complete_seconds;
 };
-
-
 struct Enemy {
     std::string enemy_class;
     sf::Vector2i enemy_pos;

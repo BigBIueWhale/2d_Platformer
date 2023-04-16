@@ -4,25 +4,19 @@
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-Player::Player()
+Player::Player(const sf::Vector2i &player_pos)
 {   //RESULT: Init and set player sprite
     player_texture_.loadFromFile("textures\\game\\player.png");
     player_sprite_.setTexture(player_texture_);
     player_sprite_.setTextureRect(sf::IntRect(28,16,36,64));
     player_sprite_.setScale(0.7,0.7);
-    player_sprite_.setPosition(100,100); // <- has to be read from file
+    player_sprite_.setPosition(player_pos.x, player_pos.y);
 }
 
 //#########################################################################################################################################
 //#########################################################################################################################################
 
-sf::Sprite Player::setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture)
-{   //FUNCTION UNUSED YET
-    player_texture.loadFromFile("textures\\game\\player.png");
-    player_sprite.setTexture(player_texture);
-    player_sprite.setPosition(100,100);
-    return player_sprite;
-}
+
 
 //#########################################################################################################################################
 //#########################################################################################################################################

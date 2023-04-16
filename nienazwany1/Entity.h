@@ -23,7 +23,6 @@ protected:
 
     void readInfoFromFile(std::string &what_level);
 public:
-    virtual sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture){;};
     virtual void drawWindow(sf::RenderWindow &window)=0;
     virtual void animate(){;};
 

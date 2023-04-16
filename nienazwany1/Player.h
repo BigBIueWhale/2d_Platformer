@@ -46,10 +46,9 @@ private:
     void animate() override;
     void substractHP();
 public:
-    Player();
-
+    Player(const sf::Vector2i &player_pos);
+    void setPostion(const sf::Vector2i &player_pos);
     void move();
-    sf::Sprite setSprite(sf::Sprite &player_sprite, sf::Texture &player_texture) override;
     virtual void drawWindow(sf::RenderWindow &window) override;
 
 //- - - - - - - - - - -
