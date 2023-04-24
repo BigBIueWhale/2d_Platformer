@@ -8,6 +8,7 @@
 #include <vector>
 
 struct struct_Level {
+    int level_id;
     sf::Vector2i player_pos;
     sf::Vector2i map_size;
     std::vector<struct Enemy> enemies;

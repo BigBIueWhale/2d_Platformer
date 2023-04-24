@@ -20,6 +20,7 @@ private:
     std::vector<sf::Sprite> spikes_vector;
 
     //collisions
+    int player_move_velocity;
     sf::FloatRect player_move_bounds;
     sf::FloatRect player_jump_bounds;
     sf::FloatRect player_cancel_jump_bounds;

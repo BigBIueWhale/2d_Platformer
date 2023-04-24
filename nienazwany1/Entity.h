@@ -17,8 +17,8 @@
 class Entity : public sf::Sprite
 {
 protected:
-    int x_pos;
-    int y_pos;
+    //int x_pos;
+    //int y_pos;
 
 
     void readInfoFromFile(std::string &what_level);

@@ -2,9 +2,9 @@
 
 struct_Level XmlHandler::loadLevelDataFromFile() {
 
-        readLevelChosen();
-    struct_Level level;
 
+    struct_Level level;
+    readLevelChosen(level);
     QFile file(QString::fromStdString("levelsinfo//levels_info.xml"));
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         std::cerr << "Error loading file!" << std::endl;
@@ -75,7 +75,7 @@ void XmlHandler::setLevelChosen(const int &level)
 }
 
 
-void XmlHandler::readLevelChosen()
+void XmlHandler::readLevelChosen(struct_Level &level)
 {
     QFile file("levelsinfo//chosen_level.xml");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {

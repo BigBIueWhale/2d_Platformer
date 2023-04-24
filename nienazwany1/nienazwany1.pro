@@ -36,6 +36,7 @@ SOURCES += \
         Player.cpp \
         WindowHandler.cpp \
         XmlHandler.cpp \
+        enemy.cpp \
         main.cpp \
         map.cpp
 
@@ -52,5 +53,6 @@ HEADERS += \
     Player.h \
     WindowHandler.h \
     XmlHandler.h \
+    enemy.h \
     map.h \
     struct_Level.h

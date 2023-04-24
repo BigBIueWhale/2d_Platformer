@@ -10,12 +10,16 @@ Game::Game()
     level_data = xmlhandler.loadLevelDataFromFile();
 
 
-
     entities_vector.push_back(std::make_unique<Map>(level_data.map_size));
     entities_vector.push_back(std::make_unique<Player>(level_data.player_pos));
 
     player = dynamic_cast<Player*>(entities_vector[1].get());
     map = dynamic_cast<Map*>(entities_vector[0].get());
+
+
+    walls_vector = map->getWalls();
+    spikes_vector = map->getSpikes();
+    player_move_velocity = player->getMaxMoveVelocity();
 
 }
 
@@ -29,16 +33,13 @@ std::string Game::eventHandling(sf::RenderWindow &window)
 
    //###########VALUE GETTERS//INIT  #####  <---- PUT IN ANOTHER FUNCTION LATER
     //MAP
-   walls_vector = map->getWalls();
-   spikes_vector = map->getSpikes();
+
     //PLAYER
-   player_bounds = player->getBounds();
+
    player_velocities = player->getVelocity();
 
-
-
-
    //Collision detection:
+    player_bounds = player->getBounds();
     player_move_bounds = player_bounds;
     player_move_bounds.height -=5;
 
@@ -62,7 +63,7 @@ player->setCancelJump(0);
 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 {
     player->setBoolRightMove(1);
-   player_move_bounds.left +=2; // < - 2 == player velocity move left/right  !!!
+   player_move_bounds.left +=player_move_velocity; // < - 2 == player velocity move left/right  !!!
     for(auto &el : walls_vector)
     {
         if(el.getGlobalBounds().intersects(player_move_bounds))
@@ -75,7 +76,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 {
     player->setBoolLeftMove(1);
-    player_move_bounds.left -=2;
+    player_move_bounds.left -=player_move_velocity;
 
     for(auto &el : walls_vector)
     {

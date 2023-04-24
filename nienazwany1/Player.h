@@ -24,6 +24,7 @@ private:
 
     void anim_move_right_left(float &elapsed);
  //- - - - - - - - - - -
+    const int move_velocity = 2;
     bool turned_right = 1;
     bool move_right;
     bool move_left;
@@ -54,6 +55,7 @@ public:
 //- - - - - - - - - - -
     const sf::FloatRect getBounds();
     const sf::Vector2f getVelocity();
+    const int getMaxMoveVelocity();
 //- - - - - - - - - - -
     void setCancelJump(const bool &value);
     void setBoolJump(const bool &value);

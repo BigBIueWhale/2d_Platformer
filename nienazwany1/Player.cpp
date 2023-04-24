@@ -15,8 +15,6 @@ Player::Player(const sf::Vector2i &player_pos)
 }
 
 
-
-
 //#########################################################################################################################################
 //#########################################################################################################################################
 
@@ -43,6 +41,11 @@ const sf::FloatRect Player::getBounds()
 const sf::Vector2f Player::getVelocity()
 { //RETURN: PLAYER XY VELOCITIES
     return sf::Vector2f(velocity_x,velocity_y);
+}
+
+const int Player::getMaxMoveVelocity()
+{
+    return move_velocity;
 }
 
 //#########################################################################################################################################
@@ -104,11 +107,11 @@ void Player::move()
 
     if(move_right)
     {
-        velocity_x = 2;
+        velocity_x = move_velocity;
     }
     if(move_left)
     {
-        velocity_x = -2;
+        velocity_x = (-1)*move_velocity;
     }
     if(!move_left && !move_right)
         velocity_x = 0;
@@ -251,45 +254,45 @@ void Player::animate()
 
     anim_move_right_left(elapsed); //Animate standing still, walking left right
 
-//    if(attack)
-//    {
-//        if(move_right)
-//        {
+    if(attack)
+    {
+        if(move_right)
+        {
 
-//        }
-//        else if(move_left)
-//        {
+        }
+        else if(move_left)
+        {
 
-//        }
-//        else
-//        {
+        }
+        else
+        {
 
-//        }
+        }
 
 
-//        switch(animationState) //animation of walking
-//        {
-//        case 0:
-//            player_sprite_.setTextureRect(sf::IntRect(80,16,36,64));
-//            break;
-//        case 1:
-//            player_sprite_.setTextureRect(sf::IntRect(128,16,36,64));
-//            break;
-//        case 2:
-//            player_sprite_.setTextureRect(sf::IntRect(176,16,36,64));
-//            break;
-//        case 3:
-//            player_sprite_.setTextureRect(sf::IntRect(224,16,36,64));
-//            break;
-//        case 4:
-//            player_sprite_.setTextureRect(sf::IntRect(272,16,36,64));
-//            break;
-//        case 5:
-//            player_sprite_.setTextureRect(sf::IntRect(24,16,36,64));
-//            break;
-//        }
+        switch(animationState) //animation of walking
+        {
+        case 0:
+            player_sprite_.setTextureRect(sf::IntRect(80,16,36,64));
+            break;
+        case 1:
+            player_sprite_.setTextureRect(sf::IntRect(128,16,36,64));
+            break;
+        case 2:
+            player_sprite_.setTextureRect(sf::IntRect(176,16,36,64));
+            break;
+        case 3:
+            player_sprite_.setTextureRect(sf::IntRect(224,16,36,64));
+            break;
+        case 4:
+            player_sprite_.setTextureRect(sf::IntRect(272,16,36,64));
+            break;
+        case 5:
+            player_sprite_.setTextureRect(sf::IntRect(24,16,36,64));
+            break;
+        }
 
-//    }
+    }
 
 
 // TO DO: ATTACK, ATTACK WHILE WALKING, ATTACK ON THE LADDER, GRAVITY IMPLEMENTATION, JUMP, LADDER CLIMBING, SMOOTHERING OF WALKING (now character does not do it fluently (ma)

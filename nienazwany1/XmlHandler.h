@@ -16,15 +16,16 @@
 class XmlHandler
 {
 private:
-    int level_id=4;
+    int level_id;
 
-    void readLevelChosen();
+    void readLevelChosen(struct_Level &level);
 public:
     struct_Level loadLevelDataFromFile();
     // readScoreboard();
     // readSettings();
 
     void setLevelChosen(const int &level);
+
 
 
 };

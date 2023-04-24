@@ -247,8 +247,6 @@ void Map::loadMapFromFile()
     const std::string file_path ="levels\\" + std::to_string(chosen_level) + ".txt";
     std::ifstream file(file_path);
 
-    std::cout<<file_path<<std::endl;
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 file.get(letter);
@@ -458,8 +456,6 @@ void Map::loadMapFromFile()
                 }
             }
         }
-
-
         file.close();
 }
 
@@ -470,15 +466,8 @@ void Map::drawWindow(sf::RenderWindow &window)
 {
     // IN: Rendered window;
     // RESULT: Draws map in the provided window (decorations, spikes, walls);
-    //window.draw(background_sprite_);
-//    game_view.setSize(window.getSize().x, window.getSize().y);
-//    game_view.setCenter(window.getSize().x/2, window.getSize().y/2);
-//    window.setView(game_view);
 
-    //background_sprite_.move(decorations_vector[1].getGlobalBounds()..)
     window.draw(background_sprite_);
-
-    //window.setView(window.getDefaultView());
 
     for(const sf::Sprite &el : decorations_vector)
     {
