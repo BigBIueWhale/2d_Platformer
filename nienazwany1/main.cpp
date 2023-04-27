@@ -71,7 +71,6 @@ int main()
 
     }
 
-
     delete windowhandler;
     return 0;
 }

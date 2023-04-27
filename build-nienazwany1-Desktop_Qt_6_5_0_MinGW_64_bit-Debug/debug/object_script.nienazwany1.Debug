@@ -1,0 +1,10 @@
+debug/DumbChaser.o
+debug/Entity.o
+debug/Game.o
+debug/Levels.o
+debug/MainMenu.o
+debug/Player.o
+debug/WindowHandler.o
+debug/XmlHandler.o
+debug/main.o
+debug/map.o

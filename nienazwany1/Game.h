@@ -4,6 +4,7 @@
 #include "WindowHandler.h"
 #include "Player.h"
 #include "map.h"
+#include "DumbChaser.h"
 class Game : public WindowHandler
 {
 
@@ -28,6 +29,7 @@ private:
 
 
     std::vector<std::unique_ptr<Entity>> entities_vector;
+    DumbChaser* chaser;
 
 
 public:

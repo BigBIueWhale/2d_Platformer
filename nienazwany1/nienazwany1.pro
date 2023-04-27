@@ -29,6 +29,7 @@ DEPENDPATH += "C:\Users\sebaj\Documents\SFML-2.5.1\include" #change this
 
 
 SOURCES += \
+        DumbChaser.cpp \
         Entity.cpp \
         Game.cpp \
         Levels.cpp \
@@ -36,7 +37,6 @@ SOURCES += \
         Player.cpp \
         WindowHandler.cpp \
         XmlHandler.cpp \
-        enemy.cpp \
         main.cpp \
         map.cpp
 
@@ -46,6 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    DumbChaser.h \
     Entity.h \
     Game.h \
     Levels.h \
@@ -53,6 +54,5 @@ HEADERS += \
     Player.h \
     WindowHandler.h \
     XmlHandler.h \
-    enemy.h \
     map.h \
     struct_Level.h

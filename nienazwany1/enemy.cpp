@@ -1,8 +1,8 @@
 
 #include "enemy.h"
 
-Enemy::Enemy()
+void Enemy::animate()
 {
-
+    ;
 }
 

@@ -1,0 +1,10 @@
+release/DumbChaser.o
+release/Entity.o
+release/Game.o
+release/Levels.o
+release/MainMenu.o
+release/Player.o
+release/WindowHandler.o
+release/XmlHandler.o
+release/main.o
+release/map.o

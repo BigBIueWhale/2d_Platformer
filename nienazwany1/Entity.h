@@ -16,14 +16,9 @@
 
 class Entity : public sf::Sprite
 {
-protected:
-    //int x_pos;
-    //int y_pos;
+private:
 
-
-    void readInfoFromFile(std::string &what_level);
 public:
     virtual void drawWindow(sf::RenderWindow &window)=0;
     virtual void animate(){;};
-
 };

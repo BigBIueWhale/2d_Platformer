@@ -12,9 +12,11 @@ Game::Game()
 
     entities_vector.push_back(std::make_unique<Map>(level_data.map_size));
     entities_vector.push_back(std::make_unique<Player>(level_data.player_pos));
+    entities_vector.push_back(std::make_unique<DumbChaser>(level_data.player_pos));
 
     player = dynamic_cast<Player*>(entities_vector[1].get());
     map = dynamic_cast<Map*>(entities_vector[0].get());
+    chaser = dynamic_cast<DumbChaser*>(entities_vector[2].get());
 
 
     walls_vector = map->getWalls();
@@ -29,6 +31,7 @@ std::string Game::eventHandling(sf::RenderWindow &window)
 
     //MOVE/ANIMATIONS FUNCTIONS
     player->move();
+    chaser->move();
 
 
    //###########VALUE GETTERS//INIT  #####  <---- PUT IN ANOTHER FUNCTION LATER

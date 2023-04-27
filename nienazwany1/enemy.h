@@ -3,12 +3,19 @@
 #define ENEMY_H
 
 
+#include <Entity.h>
 
 
-class Enemy
+class DumbChaser : public Entity
 {
+protected:
+    int velocity;
+
 public:
     Enemy();
+    virtual void animate() override;
+    virtual void move()=0;
+
 };
 
 #endif // ENEMY_H
